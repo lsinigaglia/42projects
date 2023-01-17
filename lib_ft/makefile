@@ -38,12 +38,11 @@ SRC = \
 	./ft_putnbr_fd.c
 OBJ = $(SRC:%.c=%.o)
 FLAGS = -Wall -Wextra -Werror
-HEADER = -I ./
 
 all : $(NAME)
 
 $(NAME) :
-	gcc -c $(FLAGS) $(HEADER) $(SRC)
+	gcc -c $(FLAGS)  $(SRC) -I.
 	ar rcs $(NAME) $(OBJ)
 
 clean :
