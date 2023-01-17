@@ -6,7 +6,7 @@
 /*   By: lsinigag <lsinigag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 19:02:40 by lsinigag          #+#    #+#             */
-/*   Updated: 2023/01/17 19:44:49 by lsinigag         ###   ########.fr       */
+/*   Updated: 2023/01/17 19:53:50 by lsinigag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,5 @@
 
 void	ft_bzero(void *str, size_t n)
 {
-	size_t	i;
-
-	i = 0;
-	while (i < n)
-	{
-		((unsigned char *)str)[i] = 0;
-		i++;
-	}
+	ft_memset(str, 0, n);
 }
