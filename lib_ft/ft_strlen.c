@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lsinigag <lsinigag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/18 19:02:45 by lsinigag          #+#    #+#             */
-/*   Updated: 2023/01/18 19:12:48 by lsinigag         ###   ########.fr       */
+/*   Created: 2022/11/29 16:24:51 by lsinigag          #+#    #+#             */
+/*   Updated: 2023/01/18 19:33:12 by lsinigag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char	*strrchr(const char *str, int c)
+int	ft_strlen(const char *str)
 {
-	size_t	i;
+	int	i;
 
-	i = 1 + ft_strlen((char *)str);
-	while (i-- > 0)
-	{
-		if (str[i] == c)
-			return ((char *)(str + i));
-	}
-	return (0);
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
 }

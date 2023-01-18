@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsinigag <lsinigag@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lsinigag <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/18 19:02:45 by lsinigag          #+#    #+#             */
-/*   Updated: 2023/01/18 19:12:48 by lsinigag         ###   ########.fr       */
+/*   Created: 2022/11/29 16:42:13 by lsinigag          #+#    #+#             */
+/*   Updated: 2022/12/01 14:12:43 by lsinigag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <unistd.h>
 
-char	*strrchr(const char *str, int c)
+void	ft_putstr(char *str)
 {
-	size_t	i;
+	int	i;
 
-	i = 1 + ft_strlen((char *)str);
-	while (i-- > 0)
+	i = 0;
+	while (str[i] != '\0')
 	{
-		if (str[i] == c)
-			return ((char *)(str + i));
+		write (1, &str[i], 1);
+		i++;
 	}
-	return (0);
 }
