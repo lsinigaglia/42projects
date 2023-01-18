@@ -1,40 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lsinigag <lsinigag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/17 19:55:21 by lsinigag          #+#    #+#             */
-/*   Updated: 2023/01/18 16:50:37 by lsinigag         ###   ########.fr       */
+/*   Created: 2023/01/18 17:23:47 by lsinigag          #+#    #+#             */
+/*   Updated: 2023/01/18 18:14:18 by lsinigag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <string.h>
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t	i;
+	size_t			i;
+	unsigned char	*stringa1;
+	unsigned char	*stringa2;
 
-	i = 0;
-	if (!dest)
-		return (NULL);
-	if ((size_t)dest - (size_t)src < n)
+	stringa1 = (unsigned char *)s1;
+	stringa2 = (unsigned char *)s2;
+	i = -1;
+	while (++i <= n)
 	{
-		i = n - 1;
-		while (i >= 0 && i < n)
-		{
-			((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
-			i--;
-		}
+		if (stringa1[i] != stringa2[i])
+			return (stringa1[i] - stringa2[i]);
 	}
-	else
-	{
-		while (i < n)
-		{
-			((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
-			i++;
-		}
-	}
-	return (dest);
+	return (0);
 }
