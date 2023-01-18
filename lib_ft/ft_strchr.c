@@ -6,7 +6,7 @@
 /*   By: lsinigag <lsinigag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 18:42:25 by lsinigag          #+#    #+#             */
-/*   Updated: 2023/01/18 19:02:18 by lsinigag         ###   ########.fr       */
+/*   Updated: 2023/01/18 20:17:44 by lsinigag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*strchr(const char *str, int c)
 	while (str[++i] != '\0')
 	{
 		if (str[i] == c)
-			return ((char *)(s + i));
+			return ((char *)(str + i));
 	}
 	return (0);
 }

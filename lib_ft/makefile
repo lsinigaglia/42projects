@@ -9,13 +9,11 @@ SRC = \
 	./ft_strlen.c	\
 	./ft_strlcpy.c	\
 	./ft_strlcat.c	\
-	./ft_strncat.c  \
-	./ft_strcpy.c   \
 	./ft_strchr.c	\
 	./ft_strrchr.c	\
 	./ft_strncmp.c	\
 	./ft_strnstr.c  \
-	./ft_strdup.c	\
+	#./ft_strdup.c	\
 	./ft_calloc.c	\
 	./ft_isdigit.c	\
 	./ft_atoi.c		\
