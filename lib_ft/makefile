@@ -13,7 +13,7 @@ SRC = \
 	./ft_strrchr.c	\
 	./ft_strncmp.c	\
 	./ft_strnstr.c  \
-	#./ft_strdup.c	\
+#	./ft_strdup.c	\
 	./ft_calloc.c	\
 	./ft_isdigit.c	\
 	./ft_atoi.c		\
@@ -40,7 +40,7 @@ FLAGS = -Wall -Wextra -Werror
 all : $(NAME)
 
 $(NAME) :
-	gcc -c $(FLAGS)  $(SRC) -I.
+	gcc -c $(FLAGS) $(SRC) -I.
 	ar rcs $(NAME) $(OBJ)
 
 clean :
