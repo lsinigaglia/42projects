@@ -6,7 +6,7 @@
 /*   By: lsinigag <lsinigag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 12:28:11 by lsinigag          #+#    #+#             */
-/*   Updated: 2023/01/18 20:21:00 by lsinigag         ###   ########.fr       */
+/*   Updated: 2023/01/21 18:30:26 by lsinigag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 		return ((char *)str);
 	while (i < len && str[i] != '\0')
 	{
-		while (str[i + j] == to_find[j] && str[i + j] != '\0')
+		while (str[i + j] == to_find[j] && str[i + j] != '\0' && (i + j) < len)
 			j++;
 		if (to_find[j] == '\0')
 			return ((char *)str + i);
