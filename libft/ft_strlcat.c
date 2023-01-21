@@ -6,7 +6,7 @@
 /*   By: lsinigag <lsinigag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 13:36:25 by lsinigag          #+#    #+#             */
-/*   Updated: 2023/01/18 20:15:56 by lsinigag         ###   ########.fr       */
+/*   Updated: 2023/01/21 20:25:07 by lsinigag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 
 	i = 0;
 	j = 0;
-	while (dest[j] != '\0')
+	while (dest[j] != '\0' && j < size)
 	{
 		j++;
 	}
