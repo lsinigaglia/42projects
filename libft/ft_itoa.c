@@ -36,19 +36,18 @@ static size_t	lenght_string(int n)
 char	*ft_itoa(int n)
 {
 	char	*stringa;
-	size_t	i;
 	long	number;
 	size_t	len;
 
 	len = lenght_string(n);
 	number = n;
-	i = 0;
 	stringa = (char *)malloc(len + 1);
 	if (number < 0)
 	{
 		number = - number;
-		stringa[i++] = '-';
+		stringa[0] = '-';
 	}
+	stringa[len] = 0
 	while (number >= 10)
 	{
 		stringa[len] = 48 + (number % 10);
