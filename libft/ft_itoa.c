@@ -37,29 +37,27 @@ char	*ft_itoa(int n)
 {
 	char	*stringa;
 	long	number;
-	size_t	len;
+	long	len;
 
 	len = lenght_string(n);
 	number = n;
-	stringa = (char *)malloc(len + 1);
+	stringa = (char *)malloc(len);
 	if (number < 0)
 	{
 		number = - number;
-		stringa[0] = '-';
-	}
-	stringa[len] = 0
+		*stringa = '-';
+	}	
+	len--;
+	stringa[len] = '\0';
 	while (number >= 10)
 	{
 		stringa[len] = 48 + (number % 10);
 		number /= 10;
-		printf("%c", stringa[len]);
 		len--;
 	}
 	if (number > 0 && number < 10)
 	{
-		printf("numero%ld", number);
 		stringa[len] = 48 + (number % 10);
-		printf("dopo%c", stringa[len]);
 	}
 	return (stringa);
 }
