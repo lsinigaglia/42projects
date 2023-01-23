@@ -6,7 +6,7 @@
 /*   By: lsinigag <lsinigag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 21:01:51 by lsinigag          #+#    #+#             */
-/*   Updated: 2023/01/23 19:41:19 by lsinigag         ###   ########.fr       */
+/*   Updated: 2023/01/23 20:22:48 by lsinigag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char	*ft_itoa(int n)
 {
 	char	*stringa;
 	long	number;
-	size_t	len;
+	long	len;
 
 	len = lenght_string(n);
 	number = n;
