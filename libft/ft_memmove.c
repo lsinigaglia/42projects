@@ -6,7 +6,7 @@
 /*   By: lsinigag <lsinigag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 19:55:21 by lsinigag          #+#    #+#             */
-/*   Updated: 2023/01/18 16:50:37 by lsinigag         ###   ########.fr       */
+/*   Updated: 2023/01/23 19:20:29 by lsinigag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	size_t	i;
 
 	i = 0;
-	if (!dest)
-		return (NULL);
+	if (!dest && !src)
+		return (dest);
 	if ((size_t)dest - (size_t)src < n)
 	{
 		i = n - 1;

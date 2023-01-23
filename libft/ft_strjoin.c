@@ -6,7 +6,7 @@
 /*   By: lsinigag <lsinigag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 21:57:39 by lsinigag          #+#    #+#             */
-/*   Updated: 2023/01/20 22:10:23 by lsinigag         ###   ########.fr       */
+/*   Updated: 2023/01/23 19:08:43 by lsinigag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	i;
 	size_t	j;
 
+	if (!s1 || !s2)
+		return (0);
 	j = 0;
 	i = 0;
 	str = malloc((ft_strlen(s1)+ft_strlen(s2)+1) * sizeof(char));
