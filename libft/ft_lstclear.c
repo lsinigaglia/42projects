@@ -1,26 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lsinigag <lsinigag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/24 19:26:09 by lsinigag          #+#    #+#             */
-/*   Updated: 2023/01/25 23:47:54 by lsinigag         ###   ########.fr       */
+/*   Created: 2023/01/25 20:35:20 by lsinigag          #+#    #+#             */
+/*   Updated: 2023/01/25 23:49:38 by lsinigag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_lstsize(t_list *lst)
+t_list	*ft_lstsecondlast(t_list *lst)
 {
-	int	i;
-
-	i = 0;
-	while (lst)
+	if (!lst || !(lst->next))
+		return (NULL);
+	while (lst->next->next != NULL)
 	{
 		lst = lst->next;
-		i++;
 	}
-	return (i);
+	return (lst);
+}
+
+void	ft_lstclear(t_list **lst, void (*del)(void*))
+{
+	t_list	*second_last;
+
+	if (!lst || !*lst || !del)
+		return ;
+	while ((*lst)->next)
+	{
+		second_last = ft_lstsecondlast(*lst);
+		ft_lstdelone(second_last->next, del);
+		second_last->next = NULL;
+	}
+	ft_lstdelone(*lst, del);
+	*lst = NULL;
 }
