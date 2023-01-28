@@ -6,7 +6,7 @@
 /*   By: lsinigag <lsinigag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 19:05:08 by lsinigag          #+#    #+#             */
-/*   Updated: 2023/01/20 20:03:56 by lsinigag         ###   ########.fr       */
+/*   Updated: 2023/01/28 21:10:36 by lsinigag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_substr(char const *s, size_t start, size_t len)
 		len = ft_strlen(s) - start;
 	ptr = malloc(sizeof(char) * (len + 1));
 	if (!ptr)
-		return (NULL);
+		return (ptr);
 	index = 0;
 	while (index != len)
 	{

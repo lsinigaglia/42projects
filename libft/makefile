@@ -23,7 +23,7 @@ SRC = \
 	./ft_isprint.c	\
 	./ft_toupper.c	\
 	./ft_tolower.c  \
-	./ft_substr.c	\
+	 ./ft_substr.c \
 	./ft_strjoin.c	\
 	./ft_strtrim.c	\
 	./ft_split.c	\
@@ -33,9 +33,8 @@ SRC = \
 	./ft_putchar_fd.c	\
 	./ft_putstr_fd.c	\
 	./ft_putendl_fd.c	\
-	./ft_putnbr_fd.c  \
-	\
-	./ft_lstnew.c \
+	./ft_putnbr_fd.c
+SRCBONUS = ./ft_lstnew.c \
 	./ft_lstadd_front.c \
 	./ft_lstsize.c \
 	./ft_lstlast.c \
@@ -44,16 +43,21 @@ SRC = \
 	./ft_lstclear.c \
 	./ft_lstiter.c \
 	./ft_lstmap.c
+OBJBONUS = $(SRCBONUS:%.c=%.o)
 OBJ = $(SRC:%.c=%.o)
 FLAGS = -Wall -Wextra -Werror
 
 all : $(NAME)
 
-$(NAME) :
+$(NAME) : bonus
 	gcc -c $(FLAGS) $(SRC) -I.
 	ar rcs $(NAME) $(OBJ)
+
+bonus :
+	gcc -c $(FLAGS) $(SRCBONUS) -I.
+	ar rcs $(NAME) $(OBJBONUS)
 clean :
-	rm -f $(OBJ)
+	rm -f $(OBJ) $(OBJBONUS)
 
 fclean : clean
 	rm -f $(NAME)
