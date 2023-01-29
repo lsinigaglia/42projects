@@ -6,7 +6,7 @@
 /*   By: lsinigag <lsinigag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 23:19:16 by lsinigag          #+#    #+#             */
-/*   Updated: 2023/01/23 23:46:30 by lsinigag         ###   ########.fr       */
+/*   Updated: 2023/01/29 17:43:58 by lsinigag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char			*new_string;
 	unsigned int	i;
 
-	if (!s)
+	if (!s || !f)
 		return (NULL);
 	i = 0;
 	new_string = (char *)malloc(ft_strlen(s) + 1);

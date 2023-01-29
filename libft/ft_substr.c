@@ -6,7 +6,7 @@
 /*   By: lsinigag <lsinigag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 19:05:08 by lsinigag          #+#    #+#             */
-/*   Updated: 2023/01/28 21:10:36 by lsinigag         ###   ########.fr       */
+/*   Updated: 2023/01/29 17:42:07 by lsinigag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ char	*ft_substr(char const *s, size_t start, size_t len)
 	if (!s)
 		return (NULL);
 	if (start >= ft_strlen(s))
-		start = ft_strlen(s);
+		//start = ft_strlen(s);
+		return (NULL);
 	if ((start + len) >= ft_strlen(s))
 		len = ft_strlen(s) - start;
 	ptr = malloc(sizeof(char) * (len + 1));
