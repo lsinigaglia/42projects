@@ -6,7 +6,7 @@
 /*   By: lsinigag <lsinigag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 19:02:45 by lsinigag          #+#    #+#             */
-/*   Updated: 2023/01/20 19:44:50 by lsinigag         ###   ########.fr       */
+/*   Updated: 2023/01/29 19:36:01 by lsinigag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strrchr(const char *str, int c)
 	i = 1 + ft_strlen((char *)str);
 	while (i-- > 0)
 	{
-		if (str[i] == c)
+		if (str[i] == (char)c)
 			return ((char *)(str + i));
 	}
 	return (0);

@@ -47,13 +47,14 @@ OBJBONUS = $(SRCBONUS:%.c=%.o)
 OBJ = $(SRC:%.c=%.o)
 FLAGS = -Wall -Wextra -Werror
 
-all : $(NAME)
 
-$(NAME) : bonus
+$(NAME) :
 	gcc -c $(FLAGS) $(SRC) -I.
 	ar rcs $(NAME) $(OBJ)
 
-bonus :
+all : $(NAME)
+
+bonus : $(NAME)
 	gcc -c $(FLAGS) $(SRCBONUS) -I.
 	ar rcs $(NAME) $(OBJBONUS)
 clean :
