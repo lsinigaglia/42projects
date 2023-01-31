@@ -6,7 +6,7 @@
 /*   By: lsinigag <lsinigag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 16:26:31 by lsinigag          #+#    #+#             */
-/*   Updated: 2023/01/25 23:02:45 by lsinigag         ###   ########.fr       */
+/*   Updated: 2023/01/31 01:25:33 by lsinigag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define LIBFT_H
 # include <unistd.h>
 # include <stdlib.h>
-# include <stdio.h>
 
 void				*ft_memset(void *str, int c, size_t n);
 void				ft_bzero(void *str, size_t n);

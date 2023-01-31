@@ -6,12 +6,11 @@
 /*   By: lsinigag <lsinigag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 17:29:26 by lsinigag          #+#    #+#             */
-/*   Updated: 2023/01/28 20:50:17 by lsinigag         ###   ########.fr       */
+/*   Updated: 2023/01/31 01:23:59 by lsinigag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "string.h"
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {

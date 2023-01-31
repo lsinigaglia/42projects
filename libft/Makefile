@@ -6,7 +6,7 @@
 #    By: lsinigag <lsinigag@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/30 22:21:19 by lsinigag          #+#    #+#              #
-#    Updated: 2023/01/30 22:21:30 by lsinigag         ###   ########.fr        #
+#    Updated: 2023/01/30 22:32:11 by lsinigag         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,7 @@ SRC = \
 	./ft_isprint.c	\
 	./ft_toupper.c	\
 	./ft_tolower.c  \
-	 ./ft_substr.c \
+	./ft_substr.c \
 	./ft_strjoin.c	\
 	./ft_strtrim.c	\
 	./ft_split.c	\
