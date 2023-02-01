@@ -6,7 +6,7 @@
 /*   By: lsinigag <lsinigag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 15:09:32 by lsinigag          #+#    #+#             */
-/*   Updated: 2023/02/01 02:32:54 by lsinigag         ###   ########.fr       */
+/*   Updated: 2023/02/01 02:45:59 by lsinigag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,15 +56,9 @@ int	ft_printf(const char *str, ...)
 		{
 			i++;
 			if (str[i] == '%')
-			{
-				fire += ft_putchar('%');
-				i++;
-			}
+				fire += ft_putchar(str[i++]);
 			else
-			{
-				fire += specifire(&args, str[i]);
-				i++;
-			}
+				fire += specifire(&args, str[i++]);
 		}
 		if (str[i] != '%' && str[i])
 		{
