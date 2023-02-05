@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+#include "string.h"
 
 /*char	*get_next_line(int fd)
 {
@@ -31,21 +32,26 @@ char *get_the_line(int fd,char *buf)
 	char 		*new_line;
 
 
-
+	the_line = strdup ("");
 	flag = 0;
 
 	while (flag == 0)
 	{
-		buff_len = read(fd, buf, 5);
-		temp = (char *)malloc(5 + 1);
-		the_line[buff_len] = 0;
-		temp = buf;
-		the_line = ft_strjoin(temp, the_line);
+		buff_len = read(fd, buf, 10);
+		//printf ("%li\n", buff_len);
+		temp = (char *)malloc(10 + 1);
+		temp = strdup(buf);
+		temp[buff_len] = 0;
+		//printf ("%s\n", temp);
+		
+		the_line = ft_strjoin(the_line, temp);
+		//printf ("strjoin: %s\n", the_line);
 		free (temp);
 		if (ft_strrchr(the_line, '\n'))
 		{
 			new_line = ft_strrchr(the_line, '\n');
-			new_line [1] = 0;
+			printf ("%s\n", new_line);
+			new_line [10] = 0;
 			break;
 		}
 		if (buff_len == 0)

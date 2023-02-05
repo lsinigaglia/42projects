@@ -16,9 +16,13 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <sys/types.h>
+# include <unistd.h>
+# include <fcntl.h>
 
-//static char *get_the_line();
-char	    *ft_strjoin(char *s1, char *s2);
+
+char        *get_the_line(int fd,char *buf);
+char	    *ft_strjoin(char *first, char *second);
 int         ft_strlen(char *str);
 char	    *ft_strrchr(const char *str, int c);
+
 #endif

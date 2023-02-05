@@ -35,28 +35,28 @@ char	*ft_strrchr(const char *str, int c)
 	return (0);
 }
 
-char	*ft_strjoin(char *s1, char *s2)
+char	*ft_strjoin(char *first, char *second)
 {
 	char	    *str;
 	long long	i;
 	long long	j;
 
-	if (!s1 || !s2)
+	if (!first || !second)
 		return (0);
 	
 	i = 0;
     j = 0;
-	str = malloc((ft_strlen(s1)+ft_strlen(s2)+1) * sizeof(char));
+	str = malloc((ft_strlen(first)+ft_strlen(second)+1) * sizeof(char));
 	if (!str)
 		return (0);
-	while (s1[i])
+	while (first[i])
 	{
-	str[i] = s1[i];
+	str[i] = first[i];
 	i++;
 	}
-	while (s2[j])
+	while (second[j])
 	{
-		str[i] = s2[j];
+		str[i] = second[j];
 		i++;
 		j++;
 	}
