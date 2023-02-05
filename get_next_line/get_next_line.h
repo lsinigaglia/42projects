@@ -12,10 +12,13 @@
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
-# include "stdio.h"
-# include "stdlib.h"
 
-static char get_next_line;
-static char *get_the_line();
+# include <stdio.h>
+# include <stdlib.h>
+# include <sys/types.h>
 
+//static char *get_the_line();
+char	    *ft_strjoin(char *s1, char *s2);
+int         ft_strlen(char *str);
+char	    *ft_strrchr(const char *str, int c);
 #endif

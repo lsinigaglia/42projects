@@ -10,37 +10,42 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*get_next_line(int fd)
+#include "get_next_line.h"
+
+/*char	*get_next_line(int fd)
 {
 	char		*buffer;
-	static char	*true_string;
+	char	*true_string;
 
 	while (read(fd, *buffer, BUFFER_SIZE) > 0)
 	{
 
 	}
-}
-static char *get_the_line(int fd,char *buf)
+}*/
+char *get_the_line(int fd,char *buf)
 {
-	static char *the_line;
+	char *the_line;
 	char 		*temp;
-	int			buff_len;
+	ssize_t		buff_len;
 	int			flag;
+	char 		*new_line;
+
 
 
 	flag = 0;
 
-	while (flag = 0)
+	while (flag == 0)
 	{
-		buff_len = read(fd, buf, BUFFER_SIZE);
-		temp = (char *)malloc(BUFFER_SIZE + 1);
+		buff_len = read(fd, buf, 5);
+		temp = (char *)malloc(5 + 1);
 		the_line[buff_len] = 0;
 		temp = buf;
-		the_line = strjoin(the_line, temp);
+		the_line = ft_strjoin(temp, the_line);
 		free (temp);
-		if (strrchar(the_line, '\n'))
+		if (ft_strrchr(the_line, '\n'))
 		{
-			the_line[strrchar(the_line, '\n') + 1] = 0;
+			new_line = ft_strrchr(the_line, '\n');
+			new_line [1] = 0;
 			break;
 		}
 		if (buff_len == 0)
