@@ -6,7 +6,7 @@
 /*   By: lsinigag <lsinigag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 00:09:53 by lsinigag          #+#    #+#             */
-/*   Updated: 2023/02/06 03:57:53 by lsinigag         ###   ########.fr       */
+/*   Updated: 2023/02/07 05:01:08 by lsinigag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,24 @@
 static char	*get_the_line(int fd)
 {
 	char		*temp;
-	ssize_t		buff_len;
+	static ssize_t		buff_len;
 	char		buf[6];
 	static char	*backup;
 	static int	flag;
+	int i;
 
+	// if (read (fd, buf, 5) == 0)
+	// 	return NULL;
+		if (backup)
+	{
+		i = backup[0] + 48;
+		//write(1, &i, 1);
+		if ((*backup) == '\0')
+		{
+			// write(1, &i, 1);
+			return (0);
+		}
+	}
 	if (backup)
 	{
 		temp = backup;
@@ -34,19 +47,26 @@ static char	*get_the_line(int fd)
 	while (flag == 0)
 	{
 		buff_len = read(fd, buf, 5);
-		printf("##\n");
-		if (buff_len == 0)
+		// printf("##\n");
+		// printf("%3zi", buff_len);
+		if (buff_len <= 0)
 		{
-			printf("buff_len:%zi", buff_len);
-			flag = 1;
-		 	break ;
+			// write(1, "#\n", 2);
+			*backup = '\0';
+			// write(1, backup, 1);
+		 	return (backup) ;
 		}
 		buf[buff_len] = 0;
 		temp = (char *)malloc(buff_len + 1);
 		temp = ft_strdup(buf);
-		temp[buff_len] = 0;
+		//temp[buff_len] = 0;
+		if (!backup)
+			backup = strdup("");
 		backup = ft_strjoin(backup, temp);
-		if (ft_strrchr(backup, '\n'))
+		printf("backup:%s\n", backup);
+		//printf ("%s", backup);
+		// printf ("%zi", buff_len);
+		if (ft_strrchr(backup, '\n') || buff_len < 5)
 			break ;
 		// if (buff_len < 5)
 		// 	break ;
@@ -60,17 +80,32 @@ char	*get_next_line(int fd)
 	static char	*backup;
 	char		*end_of_line;
 	static int	flag;
+	static ssize_t		buff_len;
+	int i;
 
-	if (flag == 1)
+	// if (*backup == '\0')
+	// 	return (NULL);
+
+	next_line = ft_strdup(get_the_line(fd));
+	// printf("backup:%s\n", next_line);
+	if (next_line == 0)
 		return (NULL);
-	next_line = strdup(get_the_line(fd));
+	i = next_line[0] + 48;
+	//write(1, &i, 1);
+	//printf("stringa grezza:%s\n", next_line);
+	//printf("%s", next_line);
+
 	if (ft_strrchr(next_line, '\n') != 0)
 	{
 		end_of_line = ft_strrchr(next_line, '\n');
 		*(end_of_line + 1) = 0;
 	}
 	else
-		next_line[ft_strlen(next_line)] = 0;
+	{
+		*((next_line) + ft_strlen(next_line) + 1) = 0;
+		printf("%sASD\n", next_line);
+	}
+	//write(1, "+\n", 2);
 	return (next_line);
 }
 

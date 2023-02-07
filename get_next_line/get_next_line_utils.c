@@ -6,7 +6,7 @@
 /*   By: lsinigag <lsinigag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 00:09:45 by lsinigag          #+#    #+#             */
-/*   Updated: 2023/02/06 02:37:27 by lsinigag         ###   ########.fr       */
+/*   Updated: 2023/02/07 03:37:03 by lsinigag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,8 @@ char	*ft_strdup(char *src)
 	char	*dest;
 
 	i = 0;
+	if (!src)
+		return (0);
 	dest = (char *)malloc(sizeof(char) * ft_strlen(src) + 1);
 	if (!dest)
 		return (NULL);
