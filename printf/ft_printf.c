@@ -6,11 +6,11 @@
 /*   By: lsinigag <lsinigag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 15:09:32 by lsinigag          #+#    #+#             */
-/*   Updated: 2023/02/01 02:45:59 by lsinigag         ###   ########.fr       */
+/*   Updated: 2023/02/04 00:52:05 by lsinigag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printflib.h"
+#include "ft_printf.h"
 
 static int	specifire(va_list *args, char c)
 {
@@ -35,7 +35,7 @@ static int	specifire(va_list *args, char c)
 		i += ft_puthex(va_arg(*args, unsigned int), "0123456789abcdef");
 	else if (c == 'X')
 	{
-		i += ft_puthexl(va_arg(*args, unsigned long),
+		i += ft_puthex(va_arg(*args, unsigned int),
 				"0123456789ABCDEF");
 	}
 	return (i);
