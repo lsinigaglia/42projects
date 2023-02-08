@@ -6,7 +6,7 @@
 /*   By: lsinigag <lsinigag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 15:09:32 by lsinigag          #+#    #+#             */
-/*   Updated: 2023/02/04 00:52:05 by lsinigag         ###   ########.fr       */
+/*   Updated: 2023/02/08 17:27:53 by lsinigag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,18 +26,16 @@ static int	specifire(va_list *args, char c)
 	else if (c == 'p')
 	{
 		i += write(1, "0x", 2);
-		i += ft_puthexl(va_arg(*args, unsigned long),
-				"0123456789abcdef");
+		i += ft_puthexl(va_arg(*args, unsigned long), "0123456789abcdef");
 	}
 	else if (c == 'u')
 		i += ft_putnbr_u(va_arg(*args, unsigned int));
 	else if (c == 'x')
 		i += ft_puthex(va_arg(*args, unsigned int), "0123456789abcdef");
 	else if (c == 'X')
-	{
-		i += ft_puthex(va_arg(*args, unsigned int),
-				"0123456789ABCDEF");
-	}
+		i += ft_puthex(va_arg(*args, unsigned int), "0123456789ABCDEF");
+	else if (c == 0)
+		return (i);
 	return (i);
 }
 
