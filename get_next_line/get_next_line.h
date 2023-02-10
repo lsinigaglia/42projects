@@ -6,12 +6,16 @@
 /*   By: lsinigag <lsinigag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 00:09:48 by lsinigag          #+#    #+#             */
-/*   Updated: 2023/02/08 17:09:43 by lsinigag         ###   ########.fr       */
+/*   Updated: 2023/02/10 05:50:21 by lsinigag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1
+# endif
 
 # include <stdio.h>
 # include <stdlib.h>
@@ -21,10 +25,11 @@
 
 char		*ft_strdup(char *src);
 char		*get_next_line(int fd);
-char		*ft_substr(char *s, size_t start, size_t len);
-static char	*get_the_line(int fd);
-char		*ft_strjoin(char *first, char *second);
+char		*get_the_line(int fd, char *raw_string);
+char		*ft_strjoin(char *raw_string, char *second);
 int			ft_strlen(char *str);
-char		*ft_strrchr(char *str, int c);
+char		*ft_strchr(char *str, int c);
+char		*stop_at_newline(char *raw_string);
+char		*extract(char *raw_string);
 
 #endif

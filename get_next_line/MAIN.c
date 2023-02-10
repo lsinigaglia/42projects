@@ -8,7 +8,7 @@ int main ()
 
 	index = -1;
 	i = open("hello", O_RDONLY);
-	while (++index < 10)
+	while (++index < 1)
 	{
 		s = get_next_line(i);
 		if (s)
@@ -21,4 +21,4 @@ int main ()
 	}
 	close (i);
 }
-//3456783534534646
+//3456783534534646d
