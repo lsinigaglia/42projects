@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lsinigag <lsinigag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/02 00:09:53 by lsinigag          #+#    #+#             */
-/*   Updated: 2023/02/13 03:05:03 by lsinigag         ###   ########.fr       */
+/*   Created: 2023/02/13 03:01:38 by lsinigag          #+#    #+#             */
+/*   Updated: 2023/02/13 03:13:34 by lsinigag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 char	*get_next_line(int fd)
 {
-	static char	*raw_string;
+	static char	*raw_string[4096];
 	char		*next_line;
 
 	if (fd == -1 || BUFFER_SIZE <= 0)
 		return (NULL);
-	raw_string = get_the_line(fd, raw_string);
-	if (!raw_string)
+	raw_string[fd] = get_the_line(fd, raw_string[fd]);
+	if (!raw_string[fd])
 		return (NULL);
-	next_line = stop_at_newline(raw_string);
-	raw_string = extract(raw_string);
+	next_line = stop_at_newline(raw_string[fd]);
+	raw_string[fd] = extract(raw_string[fd]);
 	return (next_line);
 }
 
