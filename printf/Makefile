@@ -6,7 +6,7 @@
 #    By: lsinigag <lsinigag@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/30 22:49:23 by lsinigag          #+#    #+#              #
-#    Updated: 2023/02/01 02:06:22 by lsinigag         ###   ########.fr        #
+#    Updated: 2023/02/26 21:03:21 by lsinigag         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = libftprintf.a
 SRC = funzioni.c funzionialtre.c ft_printf.c
 OBJ = $(SRC:%.c=%.o)
 CFLAGS = -Wall -Wextra -Werror -I.
-CC = gcc
+CC = gcc -g
 
 
 $(NAME): $(OBJ)
