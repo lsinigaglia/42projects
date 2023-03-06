@@ -1,18 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ci_hanno_rubato_i_colori.c                         :+:      :+:    :+:   */
+/*   prova_cerchio.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lsinigag <lsinigag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/26 20:33:48 by lsinigag          #+#    #+#             */
-/*   Updated: 2023/03/06 04:04:44 by lsinigag         ###   ########.fr       */
+/*   Created: 2023/03/05 19:35:10 by lsinigag          #+#    #+#             */
+/*   Updated: 2023/03/06 03:54:30 by lsinigag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./mlx/mlx.h"
-#include <stdio.h>
 #include <mlx.h>
+#include <math.h>
 
 typedef struct	s_data {
 	void	*img;
@@ -21,7 +20,6 @@ typedef struct	s_data {
 	int		line_length;
 	int		endian;
 }				t_data;
-
 
 void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 {
@@ -36,53 +34,33 @@ int	create_trgb(int t, int r, int g, int b)
 	return (t << 24 | r << 16 | g << 8 | b);
 }
 
-void add_shade (double dark, int *trgb)
-{
-	int	t = (*trgb >> 24 & 0xFF);
-	int	r = (*trgb >> 16 & 0xFF) * dark;
-	int	g = (*trgb >> 8 & 0xFF) * dark;
-	int	b = (*trgb & 0xFF) * dark;
-
-	*trgb = (t << 24 | r << 16 | g << 8 | b);
-}
-
-
 int	main(void)
 {
 	void	*mlx;
 	void	*mlx_win;
 	t_data	img;
-	int	i;
-	int j;
-	int blu;
-	int asseY = 1080;
-	int asseX = 1920;
-	int unit = 108;
+    int i = 0;
+    int r = 200;
 
 	mlx = mlx_init();
 	mlx_win = mlx_new_window(mlx, 1920, 1080, "Hello world!");
 	img.img = mlx_new_image(mlx, 1920, 1080);
 	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, &img.line_length,
 								&img.endian);
-	i = asseX / 3;
-	blu = create_trgb(256, 0, 100, 200);
-	printf("colore:%d\n", blu);
-	add_shade(0.7, &blu);
-	printf("colore:%d\n", blu);
-	while (i <= (asseX*2)/3)
-	{
-		my_mlx_pixel_put(&img, i, asseY/3, blu);
-		my_mlx_pixel_put(&img, i, (asseY*2)/3, blu);
-		i++;
+    while  (r < 300){
+		while (i < 2*M_PI*r)
+		{
+			if (r < 200)
+				my_mlx_pixel_put(&img, (r*cos(i*M_PI/r) + 960), (r*sin(i*M_PI/r) +540) , 0x55001000);
+				//mlx_M_PIxel_put(&img, r*cos(2*M_PI*i/(2*M_PI*r)), r*sin(2*M_PI*i/(2*M_PI*r)) , 0x00FF0000); formula originale
+			else
+				my_mlx_pixel_put(&img, (r*cos(i*M_PI/r) + 960), (r*sin(i*M_PI/r) +540) , 0x5900F600);
+
+			i++;
+		}
+		i = 0;
+		r++;
 	}
-	add_shade(0.3, &blu);
-	j = asseY/3;
-	while (j <= (asseY * 2)/3)
-	{
-		my_mlx_pixel_put(&img, asseX/3, j, blu);
-		my_mlx_pixel_put(&img, (asseX*2)/3, j, blu);
-		j++;
-	}
-	mlx_put_image_to_window(mlx, mlx_win, img.img, 0, 0);
+    mlx_put_image_to_window(mlx, mlx_win, img.img, 0, 0);
 	mlx_loop(mlx);
 }
