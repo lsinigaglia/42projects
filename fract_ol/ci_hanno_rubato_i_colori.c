@@ -6,7 +6,7 @@
 /*   By: lsinigag <lsinigag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/26 20:33:48 by lsinigag          #+#    #+#             */
-/*   Updated: 2023/03/06 04:04:44 by lsinigag         ###   ########.fr       */
+/*   Updated: 2023/03/08 01:13:07 by lsinigag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,15 @@ void add_shade (double dark, int *trgb)
 	*trgb = (t << 24 | r << 16 | g << 8 | b);
 }
 
+void get_opposite_color (int *trgb)
+{
+	int	t = (*trgb >> 24 & 0xFF);
+	int	r = (*trgb >> 16 & 0xFF);
+	int	g = (*trgb >> 8 & 0xFF);
+	int	b = (*trgb & 0xFF);
+
+	*trgb = (t << 24 | (255 - r) << 16 | (255 - g) << 8 | 255 - b);
+}
 
 int	main(void)
 {
@@ -65,9 +74,9 @@ int	main(void)
 	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, &img.line_length,
 								&img.endian);
 	i = asseX / 3;
-	blu = create_trgb(256, 0, 100, 200);
+	blu = create_trgb(1, 0, 71, 171);
 	printf("colore:%d\n", blu);
-	add_shade(0.7, &blu);
+	add_shade(1, &blu);
 	printf("colore:%d\n", blu);
 	while (i <= (asseX*2)/3)
 	{
@@ -75,7 +84,8 @@ int	main(void)
 		my_mlx_pixel_put(&img, i, (asseY*2)/3, blu);
 		i++;
 	}
-	add_shade(0.3, &blu);
+	get_opposite_color(&blu);
+	// add_shade(0.3, &blu);
 	j = asseY/3;
 	while (j <= (asseY * 2)/3)
 	{
