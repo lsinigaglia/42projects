@@ -6,7 +6,7 @@
 /*   By: lsinigag <lsinigag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 02:11:39 by lsinigag          #+#    #+#             */
-/*   Updated: 2023/03/08 03:10:25 by lsinigag         ###   ########.fr       */
+/*   Updated: 2023/03/08 20:48:03 by lsinigag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ void	add_shade (double dark, int *trgb);
 void	get_opposite_color (int *trgb);
 double	convert_pixel_X_to_point_x(int pixel_x, int x_axis);
 double	convert_pixel_Y_to_point_y(int pixel_y, int y_axis);
+int		convert_number_to_color(int);
+int		convert_point_to_number(double point_x, double point_y);
 
 
 #endif

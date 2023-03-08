@@ -6,7 +6,7 @@
 /*   By: lsinigag <lsinigag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/26 20:33:48 by lsinigag          #+#    #+#             */
-/*   Updated: 2023/03/08 01:13:07 by lsinigag         ###   ########.fr       */
+/*   Updated: 2023/03/08 20:21:47 by lsinigag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ int	main(void)
 	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, &img.line_length,
 								&img.endian);
 	i = asseX / 3;
-	blu = create_trgb(1, 0, 71, 171);
+	blu = create_trgb(0, 0, 71, 171);
 	printf("colore:%d\n", blu);
 	add_shade(1, &blu);
 	printf("colore:%d\n", blu);

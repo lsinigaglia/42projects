@@ -41,11 +41,11 @@ int	main(void)
 	void	*mlx_win;
 	t_data	img;
 	int	i;
-	int j;
-	int white;
-	int asseY = 1080;
-	int asseX = 1920;
-	int unit = 108;
+	int	j;
+	int number;
+	int color;
+	double	point_x;
+	double	point_y;
 
 	mlx = mlx_init();
 	mlx_win = mlx_new_window(mlx, 1920, 1080, "Hello world!");
@@ -53,7 +53,25 @@ int	main(void)
 	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, &img.line_length,
 								&img.endian);
 	i = 0;
-	white = create_trgb(100, 200, 200, 200);
+	j = 0;
+	while (i < 1920)
+	{
+		while (j++ < 1080)
+		{
+			point_x = convert_pixel_X_to_point_x(i, 1920);
+			point_y = convert_pixel_Y_to_point_y(j, 1080);
+			// printf("y:%f\n", point_y);
+			// printf("x:%f\n", point_x);
+			number = convert_point_to_number(point_x, point_y);
+			// printf("number: %d\n", number);
+			color = convert_number_to_color(number);
+			// printf("color:%d", color);
+			my_mlx_pixel_put(&img, i, j, color);
+			j++;
+		}
+		j = 0;
+		i++;
+	}
 
 	mlx_put_image_to_window(mlx, mlx_win, img.img, 0, 0);
 	mlx_loop(mlx);

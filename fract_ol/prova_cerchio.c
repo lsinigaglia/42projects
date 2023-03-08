@@ -6,7 +6,7 @@
 /*   By: lsinigag <lsinigag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/05 19:35:10 by lsinigag          #+#    #+#             */
-/*   Updated: 2023/03/07 02:23:31 by lsinigag         ###   ########.fr       */
+/*   Updated: 2023/03/08 20:16:30 by lsinigag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int	main(void)
 				my_mlx_pixel_put(&img, (r*cos(i*M_PI/r) + 960), (r*sin(i*M_PI/r) +540) , 0x55001000);
 				//mlx_M_PIxel_put(&img, r*cos(2*M_PI*i/(2*M_PI*r)), r*sin(2*M_PI*i/(2*M_PI*r)) , 0x00FF0000); formula originale
 			else
-				my_mlx_pixel_put(&img, (r*cos(i*M_PI/r) + 960), (r*sin(i*M_PI/r) +540) , 0x5900F600);
+				my_mlx_pixel_put(&img, (r*cos(i*M_PI/r) + 960), (r*sin(i*M_PI/r) +540) , 0x0000FF00);
 
 			i++;
 		}
