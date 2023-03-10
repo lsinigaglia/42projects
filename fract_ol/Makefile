@@ -1,4 +1,4 @@
-SRC = ci_hanno_rubato_i_colori.c
+SRC = Mandelbrot.c Mandelbrot_utils.c events.c
 
 OBC = $(SRC:%.c=%.o)
 
@@ -11,4 +11,4 @@ CFLAGS = -Wall -Wextra -Werror
 NAME = fract'ol
 
 $(NAME) :
-	
+	gcc -g -Lmlx -lmlx -framework OpenGL -framework AppKit $(SRC)

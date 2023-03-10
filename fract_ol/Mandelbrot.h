@@ -6,7 +6,7 @@
 /*   By: lsinigag <lsinigag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 02:11:39 by lsinigag          #+#    #+#             */
-/*   Updated: 2023/03/08 20:48:03 by lsinigag         ###   ########.fr       */
+/*   Updated: 2023/03/10 02:35:10 by lsinigag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <math.h>
 # include <complex.h>
 # include <unistd.h>
+# include <stdlib.h>
 
 typedef struct	s_data {
 	void	*img;
@@ -25,15 +26,32 @@ typedef struct	s_data {
 	int		bits_per_pixel;
 	int		line_length;
 	int		endian;
+	void	*mlx;
+	void	*win;
+	double	point_x;
+	double	point_y;
+	int		x_axis;
+	int		y_axis;
+	double	x_axis_plane;
+	double	y_axis_plane;
+	double	x_axis_plane_min;
+	double	y_axis_plane_min;
 }				t_data;
 void	my_mlx_pixel_put(t_data *data, int x, int y, int color);
 int		create_trgb(int t, int r, int g, int b);
 void	add_shade (double dark, int *trgb);
 void	get_opposite_color (int *trgb);
-double	convert_pixel_X_to_point_x(int pixel_x, int x_axis);
-double	convert_pixel_Y_to_point_y(int pixel_y, int y_axis);
+double  convert_pixel_X_to_point_x(t_data *img, int pixel_x);
+double	convert_pixel_Y_to_point_y(t_data *img, int pixel_y);
 int		convert_number_to_color(int);
 int		convert_point_to_number(double point_x, double point_y);
+// int		ft_close(int keycode, t_data *img);
+void	zoom(t_data *img, double zoom);
+int		mouse_events(int keycode, int x, int y, t_data *mlx);
+void	render (t_data *img);
+void	move(t_data *img, char direction);
+int		key_event(int keycode, t_data *img);
+
 
 
 #endif

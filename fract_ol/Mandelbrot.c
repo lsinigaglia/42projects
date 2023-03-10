@@ -37,42 +37,30 @@ void get_opposite_color (int *trgb)
 
 int	main(void)
 {
-	void	*mlx;
-	void	*mlx_win;
 	t_data	img;
-	int	i;
-	int	j;
+	// int	i;
+	// int	j;
 	int number;
 	int color;
-	double	point_x;
-	double	point_y;
 
-	mlx = mlx_init();
-	mlx_win = mlx_new_window(mlx, 1920, 1080, "Hello world!");
-	img.img = mlx_new_image(mlx, 1920, 1080);
+	img.mlx = mlx_init();
+	img.win = mlx_new_window(img.mlx, 900, 900, "Hello world!");
+	img.img = mlx_new_image(img.mlx, 900, 900);
 	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, &img.line_length,
 								&img.endian);
-	i = 0;
-	j = 0;
-	while (i < 1920)
-	{
-		while (j++ < 1080)
-		{
-			point_x = convert_pixel_X_to_point_x(i, 1920);
-			point_y = convert_pixel_Y_to_point_y(j, 1080);
-			// printf("y:%f\n", point_y);
-			// printf("x:%f\n", point_x);
-			number = convert_point_to_number(point_x, point_y);
-			// printf("number: %d\n", number);
-			color = convert_number_to_color(number);
-			// printf("color:%d", color);
-			my_mlx_pixel_put(&img, i, j, color);
-			j++;
-		}
-		j = 0;
-		i++;
-	}
+	// i = 0;
+	// j = 0;
+	img.x_axis = 900;
+	img.y_axis = 900;
+	img.x_axis_plane = 3.0;
+	img.y_axis_plane = 3.0;
+	render(&img);
+	// mlx_put_image_to_window(img.mlx, img.win, img.img, 0, 0);
+	// mlx_hook(img.win, 2, 0, ft_close, &img);
+	mlx_mouse_hook(img.win, mouse_events, &img);
+	mlx_key_hook(img.win, key_event, &img);
+	// mlx_hook(img.win, 4, 0, zoom_in, &img);
+	// mlx_hook(vars.win, 3, 0, zoom_out, &img);
 
-	mlx_put_image_to_window(mlx, mlx_win, img.img, 0, 0);
-	mlx_loop(mlx);
+	mlx_loop(img.mlx);
 }
