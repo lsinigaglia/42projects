@@ -52,8 +52,13 @@ int	main(void)
 	// j = 0;
 	img.x_axis = 900;
 	img.y_axis = 900;
-	img.x_axis_plane = 3.0;
-	img.y_axis_plane = 3.0;
+	img.x_axis_plane_max = 1.5;
+	img.x_axis_plane_min = -1.5;
+	img.y_axis_plane_max = 1.5;
+	img.y_axis_plane_min = -1.5;
+	img.x_axis_plane_total = 3.0;
+	img.y_axis_plane_total = 3.0;
+
 	render(&img);
 	// mlx_put_image_to_window(img.mlx, img.win, img.img, 0, 0);
 	// mlx_hook(img.win, 2, 0, ft_close, &img);

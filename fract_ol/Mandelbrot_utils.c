@@ -6,7 +6,7 @@
 /*   By: lsinigag <lsinigag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 02:18:57 by lsinigag          #+#    #+#             */
-/*   Updated: 2023/03/10 02:53:43 by lsinigag         ###   ########.fr       */
+/*   Updated: 2023/03/11 21:45:05 by lsinigag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,11 @@ double	convert_pixel_X_to_point_x(t_data *img, int pixel_x)
 {
 	double	x;
 
+
 	// x : 3 = pixel_x : x_axis
-	x = ((img->x_axis_plane * pixel_x) / img->x_axis) + img->x_axis_plane_min - (img->x_axis_plane / 2);
+	// x = ((img->x_axis_plane_max * pixel_x) / img->x_axis) + img->x_move - (img->x_axis_plane_max / 2);
+	x = ((img->x_axis_plane_total * pixel_x) / img->x_axis) + (img->x_axis_plane_min) + img->x_move;
+
 	return (x);
 }
 
@@ -28,7 +31,7 @@ double	convert_pixel_Y_to_point_y(t_data *img, int pixel_y)
 	double	y;
 
 	// y : 4 = pixel_x : x_axis
-	y = ((img->y_axis_plane * pixel_y) / img->y_axis) - img->y_axis_plane_min  - (img->y_axis_plane / 2);
+	y = ((img->y_axis_plane_total * pixel_y) / img->y_axis)  + (img->y_axis_plane_min) - img->y_move;
 	return (y);
 }
 
