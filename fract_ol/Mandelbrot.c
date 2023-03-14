@@ -35,21 +35,23 @@ void get_opposite_color (int *trgb)
 
 
 
-int	main(void)
+int	main(int argc, char **argv)
 {
 	t_data	img;
-	// int	i;
-	// int	j;
 	int number;
 	int color;
+	int x;
 
+	if (ft_strncmp(argv[1], "mandelbrot", 5) != 0 && ft_strncmp(argv[1], "julia", 5) != 0)
+	{
+		write(1, "Benvenuto nel magico mondo dei frattali. inserire la parola mandelbrot o la parola julia per i corrispondenti fratali\n", 118);
+		exit(0);
+	}
 	img.mlx = mlx_init();
 	img.win = mlx_new_window(img.mlx, 900, 900, "Hello world!");
 	img.img = mlx_new_image(img.mlx, 900, 900);
 	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, &img.line_length,
 								&img.endian);
-	// i = 0;
-	// j = 0;
 	img.x_axis = 900;
 	img.y_axis = 900;
 	img.x_axis_plane_max = 1.5;
@@ -58,14 +60,19 @@ int	main(void)
 	img.y_axis_plane_min = -1.5;
 	img.x_axis_plane_total = 3.0;
 	img.y_axis_plane_total = 3.0;
+	if (ft_strncmp(argv[1], "mandelbrot", 5) == 0)
+		img.set = 1;
+	if (ft_strncmp(argv[1], "julia", 5) == 0)
+	{
+		img.set = 2;
+		img.comple.real = atof(argv[2]);
+		img.comple.imag = atof(argv[3]);
+	}
 
 	render(&img);
-	// mlx_put_image_to_window(img.mlx, img.win, img.img, 0, 0);
-	// mlx_hook(img.win, 2, 0, ft_close, &img);
 	mlx_mouse_hook(img.win, mouse_events, &img);
 	mlx_key_hook(img.win, key_event, &img);
 	// mlx_hook(img.win, 4, 0, zoom_in, &img);
 	// mlx_hook(vars.win, 3, 0, zoom_out, &img);
-
 	mlx_loop(img.mlx);
 }
