@@ -6,7 +6,7 @@
 /*   By: lsinigag <lsinigag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 19:57:34 by lsinigag          #+#    #+#             */
-/*   Updated: 2023/03/17 00:45:51 by lsinigag         ###   ########.fr       */
+/*   Updated: 2023/03/17 01:45:32 by lsinigag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,14 @@
 
 /* to zoom in use this formula: (max)X=(max(X)-(right * X(axis) * zoom)
 and (min)X = (min)X - (left * X(axis) * zoom). basically i take out a portion*/
-/*of the "right" axis and of the "left" of the axis adjusted on the location of the point.
+/*of the "right" axis and of the "left" of the axis adjusted on the
+location of the point.
 The zoom factor is how much we want to zoom. i set it at 0.5.
 Right = 1 - x / X(axis). it varies beteewn 0 and 1. */
-/*if i have an x axis = {-1, +2} and x = 1 the x axis has to become {0, +1,5}. out of
-that result i came up with this formula. so in this case i have:
+
+/*if i have an x axis = {-1, +2} and x = 1 the x axis has to become
+{0, +1,5}. out of that result i came up with this formula.
+So in this case i have:
 max(X) = 2 - ((1/3 * 3) * 0.5) =*/
 /*max(X) = 2 - 1.5
 max(X) = 0.5

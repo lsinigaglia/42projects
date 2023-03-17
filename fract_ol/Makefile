@@ -1,4 +1,4 @@
-SRC = Mandelbrot.c Mandelbrot_utils.c events.c checks.c
+SRC = Mandelbrot.c Mandelbrot_utils.c Mandelbrot_other_utils.c events.c checks.c
 
 OBJ = $(SRC:%.c=%.o)
 

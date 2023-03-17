@@ -6,7 +6,7 @@
 /*   By: lsinigag <lsinigag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 20:32:24 by lsinigag          #+#    #+#             */
-/*   Updated: 2023/03/17 01:37:52 by lsinigag         ###   ########.fr       */
+/*   Updated: 2023/03/17 01:46:30 by lsinigag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ int	check_params_julia(int argc, char **argv)
 	i = -1;
 	while (argv[2][++i] != 0)
 	{
-		if ((!(argv[2][i] >= '0' && argv[2][i] <= '9')) && argv[2][i] != '.' && argv[2][i] != '-')
+		if ((!(argv[2][i] >= '0' && argv[2][i] <= '9')) && argv[2][i]
+			!= '.' && argv[2][i] != '-')
 			return (2);
 	}
 	i = -1;
