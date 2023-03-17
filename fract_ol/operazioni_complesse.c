@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   operazioni_complesse.c                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lsinigag <lsinigag@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/03/15 19:14:26 by lsinigag          #+#    #+#             */
+/*   Updated: 2023/03/17 01:15:32 by lsinigag         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <math.h>
 #include <stdio.h>
 #include "Mandelbrot.h"
@@ -13,6 +25,7 @@ int	ft_strlen(char *str)
 	}
 	return (i);
 }
+
 double	ft_atof(char *str)
 {
 	int		i;
@@ -51,9 +64,9 @@ double	ft_atof(char *str)
 int	main()
 {
 	double x;
-	char *str = "1234.5";
+	char *str = "0.8133223";
 	x = ft_atof(str);
-	printf ("RISULTATO:%f\n", x);
+	printf ("RISULTATO:%lf\n", x);
 }
 
 
