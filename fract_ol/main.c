@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Mandelbrot.c                                       :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lsinigag <lsinigag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 18:41:32 by lsinigag          #+#    #+#             */
-/*   Updated: 2023/03/23 16:48:44 by lsinigag         ###   ########.fr       */
+/*   Updated: 2023/03/23 21:28:28 by lsinigag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int	create_trgb(int t, int r, int g, int b)
 void	init(t_data *img)
 {
 	img->mlx = mlx_init();
-	img->win = mlx_new_window(img->mlx, 1920, 1080, "Hello world!");
+	img->win = mlx_new_window(img->mlx, 1920, 1080, "The Frattalanza");
 	img->img = mlx_new_image(img->mlx, 1920, 1080);
 	img->addr = mlx_get_data_addr(img->img, &img->bits_per_pixel,
 			&img->line_length, &img->endian);

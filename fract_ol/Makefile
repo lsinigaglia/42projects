@@ -8,7 +8,7 @@ CC = GCC
 
 CFLAGS = -Wall -Wextra -Werror
 
-NAME = a.out
+NAME = fractal
 
 all: $(NAME)
 $(NAME) :
@@ -19,6 +19,7 @@ clean:
 	@rm -f $(OBJ)
 
 fclean: clean
+	@make -C printf fclean
 	rm -f $(NAME)
 
 re: fclean all
