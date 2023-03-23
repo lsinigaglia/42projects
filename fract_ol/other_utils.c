@@ -6,7 +6,7 @@
 /*   By: lsinigag <lsinigag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 18:45:08 by lsinigag          #+#    #+#             */
-/*   Updated: 2023/03/23 18:47:22 by lsinigag         ###   ########.fr       */
+/*   Updated: 2023/03/23 19:24:57 by lsinigag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	render(t_data *img)
 	j = 0;
 	while (i < 1920)
 	{
-		while (j++ < 1080)
+		while (j < 1080)
 		{
 			img->point_x = convert_pixel_x_to_point_x(img, i);
 			img->point_y = convert_pixel_y_to_point_y(img, j);
