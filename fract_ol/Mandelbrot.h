@@ -6,7 +6,7 @@
 /*   By: lsinigag <lsinigag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 02:11:39 by lsinigag          #+#    #+#             */
-/*   Updated: 2023/03/17 01:43:28 by lsinigag         ###   ########.fr       */
+/*   Updated: 2023/03/21 20:35:11 by lsinigag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ double	convert_pixel_y_to_point_y(t_data *img, int pixel_y);
 double	ft_atof(char *str);
 int		render_mandelbrot(t_data *img, double point_x, double point_y);
 int		render_julia(t_data *img, double point_x, double point_y);
+int		render_newton(t_data *img, double point_x, double point_y);
 int		create_trgb(int t, int r, int g, int b);
 int		mouse_events(int keycode, int x, int y, t_data *mlx);
 int		convert_point_to_number(t_data *img, double point_x, double point_y);

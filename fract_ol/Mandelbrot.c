@@ -6,7 +6,7 @@
 /*   By: lsinigag <lsinigag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 18:41:32 by lsinigag          #+#    #+#             */
-/*   Updated: 2023/03/17 01:20:02 by lsinigag         ###   ########.fr       */
+/*   Updated: 2023/03/21 20:32:13 by lsinigag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,9 +73,11 @@ int	main(int argc, char **argv)
 	if (write_checks(argc, argv))
 		return (0);
 	init(&img);
-	if (ft_strncmp(argv[1], "mandelbrot", 5) == 0)
+	if (ft_strncmp(argv[1], "mandelbrot", 10) == 0)
 		img.set = 1;
-	if (ft_strncmp(argv[1], "julia", 5) == 0)
+	if (ft_strncmp(argv[1], "newton", 7) == 0)
+		img.set = 3;
+	if (ft_strncmp(argv[1], "julia", 6) == 0)
 	{
 		img.set = 2;
 		img.c_julia.real = atof(argv[2]);

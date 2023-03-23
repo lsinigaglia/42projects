@@ -6,7 +6,7 @@
 /*   By: lsinigag <lsinigag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 20:32:24 by lsinigag          #+#    #+#             */
-/*   Updated: 2023/03/17 01:46:30 by lsinigag         ###   ########.fr       */
+/*   Updated: 2023/03/22 00:36:01 by lsinigag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	check_parameters(int argc, char **argv)
 	if (argc < 2 || argc > 4)
 		return (1);
 	if ((ft_strncmp(argv[1], "mandelbrot", 11) != 0)
-		&& ((ft_strncmp(argv[1], "julia", 6) != 0)))
+		&& ((ft_strncmp(argv[1], "julia", 6) != 0)) && ft_strncmp(argv[1], "newton", 6) != 0)
 		return (1);
 	if (ft_strncmp(argv[1], "mandelbrot", 11) == 0 && (argc > 2))
 		return (1);
@@ -53,6 +53,8 @@ int	check_parameters(int argc, char **argv)
 		res = check_params_julia(argc, argv);
 		return (res);
 	}
+	if (ft_strncmp(argv[1], "newton", 7) == 0)
+		return (3);
 	return (0);
 }
 
