@@ -6,7 +6,7 @@
 /*   By: lsinigag <lsinigag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 02:11:39 by lsinigag          #+#    #+#             */
-/*   Updated: 2023/03/21 20:35:11 by lsinigag         ###   ########.fr       */
+/*   Updated: 2023/03/23 18:46:30 by lsinigag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,13 @@ typedef struct s_data {
 	double	x_move;
 	double	y_move;
 	t_cmp	c_julia;
+	double	temp_real;
+	double	temp_imag;
+	double	diff;
+	double	denominator;
+	t_cmp	numerator;
+	t_cmp	fz;
+	t_cmp	dfz;
 }				t_data;
 double	convert_pixel_x_to_point_x(t_data *img, int pixel_x);
 double	convert_pixel_y_to_point_y(t_data *img, int pixel_y);
@@ -54,6 +61,7 @@ double	ft_atof(char *str);
 int		render_mandelbrot(t_data *img, double point_x, double point_y);
 int		render_julia(t_data *img, double point_x, double point_y);
 int		render_newton(t_data *img, double point_x, double point_y);
+int		make_newton(t_data *img, t_cmp z, int i);
 int		create_trgb(int t, int r, int g, int b);
 int		mouse_events(int keycode, int x, int y, t_data *mlx);
 int		convert_point_to_number(t_data *img, double point_x, double point_y);
@@ -70,6 +78,6 @@ void	zoom_out(t_data *img, double zoom, int x, int y);
 void	render(t_data *img);
 void	move(t_data *img, char direction);
 void	init(t_data *img);
-int		write_checks (int argc, char **argv);
+int		write_checks(int argc, char **argv);
 
 #endif

@@ -1,4 +1,4 @@
-SRC = Mandelbrot.c Mandelbrot_utils.c Mandelbrot_other_utils.c events.c checks.c
+SRC = main.c utils.c other_utils.c events.c checks.c fractals.c
 
 OBJ = $(SRC:%.c=%.o)
 
@@ -13,7 +13,7 @@ NAME = a.out
 all: $(NAME)
 $(NAME) :
 	make -C printf
-	gcc -g -Lmlx -lmlx -Lprintf -lftprintf -framework OpenGL -framework AppKit $(SRC) -o a.out
+	gcc  -Lmlx -lmlx -Lprintf -lftprintf -framework OpenGL -framework AppKit $(SRC) -o fractal
 clean:
 	@make -C printf clean
 	@rm -f $(OBJ)

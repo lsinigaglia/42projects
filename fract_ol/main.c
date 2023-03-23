@@ -6,7 +6,7 @@
 /*   By: lsinigag <lsinigag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 18:41:32 by lsinigag          #+#    #+#             */
-/*   Updated: 2023/03/21 20:32:13 by lsinigag         ###   ########.fr       */
+/*   Updated: 2023/03/23 16:48:44 by lsinigag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,40 +25,40 @@ int	create_trgb(int t, int r, int g, int b)
 	return (t << 24 | r << 16 | g << 8 | b);
 }
 
-// void	add_shade(double dark, int *trgb)
-// {
-// 	int	t = (*trgb >> 24 & 0xFF) * dark;
-// 	int	r = (*trgb >> 16 & 0xFF) * dark;
-// 	int	g = (*trgb >> 8 & 0xFF) * dark;
-// 	int	b = (*trgb & 0xFF) * dark;
+/*void	add_shade(double dark, int *trgb)
+{
+	int	t = (*trgb >> 24 & 0xFF) * dark;
+	int	r = (*trgb >> 16 & 0xFF) * dark;
+	int	g = (*trgb >> 8 & 0xFF) * dark;
+	int	b = (*trgb & 0xFF) * dark;
 
-// 	*trgb = (t << 24 | r << 16 | g << 8 | b);
-// }
+	*trgb = (t << 24 | r << 16 | g << 8 | b);
+}*/
 
-// void	get_opposite_color(int *trgb)
-// {
-// 	int	t = (*trgb >> 24 & 0xFF);
-// 	int	r = (*trgb >> 16 & 0xFF);
-// 	int	g = (*trgb >> 8 & 0xFF);
-// 	int	b = (*trgb & 0xFF);
+/*void	get_opposite_color(int *trgb)
+{
+	int	t = (*trgb >> 24 & 0xFF);
+	int	r = (*trgb >> 16 & 0xFF);
+	int	g = (*trgb >> 8 & 0xFF);
+	int	b = (*trgb & 0xFF);
 
-// 	*trgb = (t << 24 | (255 - r) << 16 | (255 - g) << 8 | 255 - b);
-// }
+	*trgb = (t << 24 | (255 - r) << 16 | (255 - g) << 8 | 255 - b);
+}*/
 
 void	init(t_data *img)
 {
 	img->mlx = mlx_init();
-	img->win = mlx_new_window(img->mlx, 900, 900, "Hello world!");
-	img->img = mlx_new_image(img->mlx, 900, 900);
+	img->win = mlx_new_window(img->mlx, 1920, 1080, "Hello world!");
+	img->img = mlx_new_image(img->mlx, 1920, 1080);
 	img->addr = mlx_get_data_addr(img->img, &img->bits_per_pixel,
 			&img->line_length, &img->endian);
-	img->x_axis = 900;
-	img->y_axis = 900;
-	img->x_axis_plane_max = 1.5;
-	img->x_axis_plane_min = -1.5;
+	img->x_axis = 1920;
+	img->y_axis = 1080;
+	img->x_axis_plane_max = 2.66666666667;
+	img->x_axis_plane_min = -2.66666666667;
 	img->y_axis_plane_max = 1.5;
 	img->y_axis_plane_min = -1.5;
-	img->x_axis_plane_total = 3.0;
+	img->x_axis_plane_total = 5.33333333333;
 	img->y_axis_plane_total = 3.0;
 	img->color_shift = 0;
 }
