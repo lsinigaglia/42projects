@@ -1,0 +1,5 @@
+make --dry-run --keep-going --print-directory
+make: Entering directory `/Users/lsinigag/Desktop/42PROJECTS_TRUE/push_swap'
+make: Nothing to be done for `all'.
+make: Leaving directory `/Users/lsinigag/Desktop/42PROJECTS_TRUE/push_swap'
+ 
