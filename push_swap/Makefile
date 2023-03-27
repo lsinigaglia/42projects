@@ -7,14 +7,15 @@ CFLAGS = -Werror -Wall -Wextra
 LIBS = -Lft_printf -lftprintf -Llibft -lft
 
 
+
 all : $(NAME)
 
 $(NAME) : $(OBJ)
 	@make -C ft_printf
 	@make -C libft
-	$(CC) $(FLAGS) $(LIBS) $(OBJ) -o $(NAME) -I.
+	$(CC) $(CFLAGS) $(LIBS) $(OBJ) -o $(NAME) -I.
 %.o: %.c
-	@$(CC) -g $(CFLAGS) -c $< -o $@
+	@$(CC) -g $(CFLAGS) -c $< -o $@ -Ilibft -Ift_printf
 clean :
 	@rm -f $(NAME)
 
