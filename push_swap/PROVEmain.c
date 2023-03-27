@@ -6,7 +6,7 @@
 /*   By: lsinigag <lsinigag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 15:44:15 by lsinigag          #+#    #+#             */
-/*   Updated: 2023/03/24 21:12:24 by lsinigag         ###   ########.fr       */
+/*   Updated: 2023/03/27 17:59:29 by lsinigag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,16 @@ void	make_stack_A(int argc, char **argv, t_list *head_A)
 {
 	int		i;
 	t_list	*pointer_A;
+	int		*number;
 
 	i = 0;
+	number = malloc(sizeof(int) * (argc - 1));
 	while (++i < argc)
 	{
-		pointer_A = ft_lstnew(argv[i]);
+		number[i] = ftcheck_atoi(argv[i]);
+		printf("number:%d\n", number[i]);
+		pointer_A = ft_lstnew(&number[i]);
+		// printf("%c", pointer_A->content);
 		ft_lstadd_back(&head_A, pointer_A);
 	}
 }
@@ -38,12 +43,12 @@ int main (int argc, char **argv)
 	head_B = ft_lstnew(NULL);
 	make_stack_A(argc, argv, head_A);
 	// swap(head_A);
-	// push(head_A, head_B);
-	rotate(head_A);
+	push(head_A, head_B); // push b
+	// reverse_rotate(head_A);
 	while (head_A->next != NULL)
 	{
 		head_A = head_A->next;
-		ft_printf("%s", (head_A->content));
+		ft_printf("after ops:%d\n", (head_A->content));
 	}
 	while (head_B->next != NULL)
 	{
@@ -51,4 +56,5 @@ int main (int argc, char **argv)
 		ft_printf("\n%s", (head_B->content));
 	}
 	ft_lstclear(&head_B, do_nothing);
+	ft_lstclear(&head_A, do_nothing);
 }

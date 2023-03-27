@@ -6,7 +6,7 @@
 /*   By: lsinigag <lsinigag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 15:02:11 by lsinigag          #+#    #+#             */
-/*   Updated: 2023/03/24 21:12:55 by lsinigag         ###   ########.fr       */
+/*   Updated: 2023/03/27 14:54:10 by lsinigag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,7 @@ void	ss(t_list *head_A, t_list *head_B);
 void	push(t_list *head_A, t_list *head_B);
 t_list	*ft_lstsecondlast(t_list *lst);
 void	rotate(t_list *head);
+void	reverse_rotate(t_list *head);
+int		ftcheck_atoi(const char *str);
 
 #endif

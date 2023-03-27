@@ -6,7 +6,7 @@
 /*   By: lsinigag <lsinigag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 15:02:07 by lsinigag          #+#    #+#             */
-/*   Updated: 2023/03/24 21:31:05 by lsinigag         ###   ########.fr       */
+/*   Updated: 2023/03/27 14:30:14 by lsinigag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,6 @@ void swap(t_list *head_A)
 
 }
 
-void ss(t_list *head_A, t_list *head_B)
-{
-	swap(head_A);
-	swap(head_B);
-}
 void	push(t_list *head_A, t_list *head_B)
 {
 	t_list *temp_1;
@@ -46,7 +41,7 @@ void	push(t_list *head_A, t_list *head_B)
 	temp_1->next = temp_2;
 }
 
-void	rotate(t_list *head)
+void	reverse_rotate(t_list *head)
 {
 	t_list	*temp_1;
 	t_list	*temp_2;
@@ -56,19 +51,22 @@ void	rotate(t_list *head)
 	temp_2 = head->next->next;
 	new_first = ft_lstsecondlast(head);
 	head->next = new_first->next;
-	head->next->next = temp_2;
-	new_first->next = temp_1;
-	temp_1->next = NULL;
-	// new_first->next = temp_1;
+	head->next->next = temp_1;
+	new_first->next = NULL;
 
 }
-t_list	*ft_lstsecondlast(t_list *lst)
+
+void	rotate(t_list *head)
 {
-	if (!lst || !(lst->next))
-		return (NULL);
-	while (lst->next->next != NULL)
-	{
-		lst = lst->next;
-	}
-	return (lst);
+	t_list	*temp_1;
+	t_list	*temp_2;
+	t_list	*new_first;
+
+	temp_1 = head->next;
+	temp_2 = head->next->next;
+	new_first = ft_lstsecondlast(head);
+	new_first->next = temp_1;
+	temp_1->next = temp_2;
+	temp_1->next = NULL;
+
 }

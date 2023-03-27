@@ -1,5 +1,5 @@
-NAME = push_swap
-SRC = PROVEmain.c base_functions.c
+NAME = a.out
+SRC = PROVEmain.c base_functions.c utils_and_ss.c
 OBJ = $(SRC:%.c=%.o)
 
 CC = gcc
@@ -14,7 +14,7 @@ $(NAME) : $(OBJ)
 	@make -C libft
 	$(CC) $(FLAGS) $(LIBS) $(OBJ) -o $(NAME) -I.
 %.o: %.c
-	@$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) -g $(CFLAGS) -c $< -o $@
 clean :
 	@rm -f $(NAME)
 

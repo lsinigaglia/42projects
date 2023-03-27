@@ -1,0 +1,16 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug with LLDB",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "/Users/lsinigag/Desktop/42PROJECTS_TRUE/push_swap/a.out",
+            "args": ["1", "2", "3"],
+            "stopAtEntry": true,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "MIMode": "lldb"
+        }
+    ]
+}
