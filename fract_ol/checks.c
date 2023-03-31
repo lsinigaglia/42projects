@@ -6,7 +6,7 @@
 /*   By: lsinigag <lsinigag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 20:32:24 by lsinigag          #+#    #+#             */
-/*   Updated: 2023/03/23 18:49:43 by lsinigag         ###   ########.fr       */
+/*   Updated: 2023/03/31 19:26:38 by lsinigag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,8 +69,8 @@ julia or newton for the corresponding fractal. \n");
 	}
 	if (check_parameters(argc, argv) == 2)
 	{
-		ft_printf("insert the julia parameters this way: fractal julia x y\n\
-these are some very cool values!\
+		ft_printf("Insert the julia parameters this way: fractal julia x y\n\
+These are some very cool values!\
 Douady's Rabbit: -0.123 0.745\nSan Marco Fractal: -0.75\nSeahorse Valley: -0.75 0.15\n\
 Whisker Valley: -0.8 0.156\nGalactic Fractal: -0.391 -0.587\n\
 Dragon Fractal: 0.45 -0.1428\nSatellite Antenna Fractal: 0.110 0.670\n");

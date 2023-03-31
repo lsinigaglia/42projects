@@ -6,15 +6,14 @@
 /*   By: lsinigag <lsinigag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 02:11:39 by lsinigag          #+#    #+#             */
-/*   Updated: 2023/03/23 18:46:30 by lsinigag         ###   ########.fr       */
+/*   Updated: 2023/03/31 19:51:32 by lsinigag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MANDELBROT_H
 # define MANDELBROT_H
-# include "./mlx/mlx.h"
 # include <stdio.h>
-# include <mlx.h>
+# include "./mlx/mlx.h"
 # include <math.h>
 # include <unistd.h>
 # include <stdlib.h>

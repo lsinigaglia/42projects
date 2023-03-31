@@ -23,9 +23,9 @@ void	make_stack_A(int argc, char **argv, t_list *head_A)
 	int		*number;
 
 	i = 0;
+	number = malloc(sizeof(int) * (argc - 1));
 	while (++i < argc)
 	{
-		number = malloc(sizeof(int));
 		number[i] = ftcheck_atoi(argv[i]);
 		printf("number:%d\n", number[i]);
 		pointer_A = ft_lstnew(&number[i]);

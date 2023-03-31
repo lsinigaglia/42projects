@@ -44,11 +44,11 @@ void	push(t_list *head_A, t_list *head_B)
 void	reverse_rotate(t_list *head)
 {
 	t_list	*temp_1;
-	//t_list	*temp_2;
+	t_list	*temp_2;
 	t_list	*new_first;
 
 	temp_1 = head->next;
-	//temp_2 = head->next->next;
+	temp_2 = head->next->next;
 	new_first = ft_lstsecondlast(head);
 	head->next = new_first->next;
 	head->next->next = temp_1;
