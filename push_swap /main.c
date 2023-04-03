@@ -6,15 +6,16 @@
 /*   By: lsinigag <lsinigag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 15:13:50 by lsinigag          #+#    #+#             */
-/*   Updated: 2023/03/24 15:33:06 by lsinigag         ###   ########.fr       */
+/*   Updated: 2023/03/31 20:56:31 by lsinigag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
+
 int	main(int argc, char **argv)
 {
-	make a list with all the argvs (stack a);
-	make an empty list (stack b)
-
-	do all the stuff 
-
+	(void) argc;
+	int n;
+	n = ftcheck_atoi(argv[1]);
+	printf("%d", n);
 }

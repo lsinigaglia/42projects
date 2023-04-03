@@ -6,7 +6,7 @@
 /*   By: lsinigag <lsinigag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 14:29:48 by lsinigag          #+#    #+#             */
-/*   Updated: 2023/03/27 14:55:18 by lsinigag         ###   ########.fr       */
+/*   Updated: 2023/04/03 18:15:11 by lsinigag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,22 @@ t_list	*ft_lstsecondlast(t_list *lst)
 	return (lst);
 }
 
-void ss(t_list *head_A, t_list *head_B)
+void ss(t_list **head_A, t_list **head_B)
 {
 	swap(head_A);
 	swap(head_B);
+}
+
+void rr(t_list **head_A, t_list **head_B)
+{
+	rotate(head_A);
+	rotate(head_B);
+}
+
+void rrr(t_list **head_A, t_list **head_B)
+{
+	reverse_rotate(head_A);
+	reverse_rotate(head_B);
 }
 
 int	ftcheck_atoi(const char *str)
