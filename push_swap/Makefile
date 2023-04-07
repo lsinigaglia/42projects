@@ -12,13 +12,15 @@ all : $(NAME)
 $(NAME) : $(OBJ)
 	@make -C ft_printf
 	@make -C libft
-	$(CC) $(FLAGS) $(LIBS) $(OBJ) -o $(NAME) -I.
+	$(CC) $(CFLAGS) -I. $(OBJ) $(LIBS) -o $(NAME) 
 %.o: %.c
-	@$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -I. -c $< -o $@
 clean :
+
 	@rm -f $(NAME)
 
 fclean : clean
-	@rm -f $(OBJ)
-
-re : fclean all
+	@make fclean -C ft_printf
+	@make fclean -C libft
+	@rm -f $(OBJ) $(NAME)
+re : clean all
