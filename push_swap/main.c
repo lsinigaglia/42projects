@@ -15,6 +15,6 @@ int	main(int argc, char **argv)
 	make a list with all the argvs (stack a);
 	make an empty list (stack b)
 
-	do all the stuff 
+	do all the stuff hello
 
-}qweqwewqeqw
+}
