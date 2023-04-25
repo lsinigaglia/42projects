@@ -6,7 +6,7 @@
 /*   By: lsinigag <lsinigag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 14:29:48 by lsinigag          #+#    #+#             */
-/*   Updated: 2023/04/03 18:15:11 by lsinigag         ###   ########.fr       */
+/*   Updated: 2023/04/24 23:47:00 by lsinigag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,19 +23,22 @@ t_list	*ft_lstsecondlast(t_list *lst)
 	return (lst);
 }
 
+/*swap a and swap b at the same time*/
 void ss(t_list **head_A, t_list **head_B)
 {
+	// t_list *temp;
 	swap(head_A);
 	swap(head_B);
 }
 
-void rr(t_list **head_A, t_list **head_B)
+/*ra and rb at the same time.*/
+void	rr(t_list **head_A, t_list **head_B)
 {
 	rotate(head_A);
 	rotate(head_B);
 }
-
-void rrr(t_list **head_A, t_list **head_B)
+/* rra and rrb at the same time */
+void	rrr(t_list **head_A, t_list **head_B)
 {
 	reverse_rotate(head_A);
 	reverse_rotate(head_B);
@@ -68,4 +71,21 @@ int	ftcheck_atoi(const char *str)
 		return (0);
 	}
 	return (res * sign);
+}
+/* free_stack:
+*	Frees each element in a given stack and sets the stack pointer to NULL.
+*/
+void	free_stack(t_list **stack)
+{
+	t_list	*tmp;
+
+	if (!stack || !(*stack))
+		return ;
+	while (*stack)
+	{
+		tmp = (*stack)->next;
+		free(*stack);
+		*stack = tmp;
+	}
+	*stack = NULL;
 }

@@ -6,15 +6,15 @@
 /*   By: lsinigag <lsinigag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 15:44:15 by lsinigag          #+#    #+#             */
-/*   Updated: 2023/04/03 19:11:51 by lsinigag         ###   ########.fr       */
+/*   Updated: 2023/04/25 00:40:51 by lsinigag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	do_nothing(void *content)
+void	replace_number(t_list *head)
 {
-	(void)content;
+
 }
 void print_list_contents(t_list *head)
 {
@@ -41,12 +41,12 @@ void	make_stack_A(int argc, char **argv, t_list *head_A)
 			pointer_A = ft_lstnew(number);
 			// printf("%c", pointer_A->content);
 			ft_lstadd_back(&head_A, pointer_A);
-			printf("number:%d\n", *(int *)(pointer_A->content));
+			// printf("number:%d\n", *(int *)(pointer_A->content));
 		}
 		if (head_A->content == NULL)
 		{
 			head_A->content = number;
-			printf("number:%d\n", *number);
+			// printf("number:%d\n", *number);
 		}
 	}
 }
@@ -60,8 +60,12 @@ int main (int argc, char **argv)
 	head_A = ft_lstnew(NULL);
 	head_B = ft_lstnew(NULL);
 	make_stack_A(argc, argv, head_A);
-	while (i++ < 5)
+	while (i++ < 4)
 		push(&head_A, &head_B); // push b
+	i = 0;
+	while (i++ < 4)
+		push(&head_B, &head_A); // push b
+	// while
 	// swap(&head_A);
 
 
@@ -79,6 +83,6 @@ int main (int argc, char **argv)
 		ft_printf("Stack B:%d\n", *(int *)(head_B->content));
 		head_B = head_B->next;
 	}
-	ft_lstclear(&head_B, free);
-	ft_lstclear(&head_A, free);
+	// ft_lstclear(&head_B, free);
+	free_stack(&head_A);
 }
