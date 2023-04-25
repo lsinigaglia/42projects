@@ -6,7 +6,7 @@
 /*   By: lsinigag <lsinigag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 15:13:50 by lsinigag          #+#    #+#             */
-/*   Updated: 2023/04/25 03:17:11 by lsinigag         ###   ########.fr       */
+/*   Updated: 2023/04/25 03:18:17 by lsinigag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,5 @@ int	main(int argc, char **argv)
 	(void) argc;
 	int n;
 	n = ftcheck_atoi(argv[1]);
-	printf("%d", n);
+	pt rintf("%d", n);
 }
