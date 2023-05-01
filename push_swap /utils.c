@@ -12,39 +12,16 @@
 
 #include "push_swap.h"
 
-t_list	*ft_lstsecondlast(t_list *lst)
+ void print_list_contents(the_stack *head)
 {
-	if (!lst || !(lst->next))
-		return (NULL);
-	while (lst->next->next != NULL)
+	while (head != NULL)
 	{
-		lst = lst->next;
-	}
-	return (lst);
+		printf("Node content: %d\n", (head->cardinal_number));
+		head = head->next;
+	} 
 }
 
-/*swap a and swap b at the same time*/
-void ss(t_list **head_A, t_list **head_B)
-{
-	// t_list *temp;
-	swap(head_A);
-	swap(head_B);
-}
-
-/*ra and rb at the same time.*/
-void	rr(t_list **head_A, t_list **head_B)
-{
-	rotate(head_A);
-	rotate(head_B);
-}
-/* rra and rrb at the same time */
-void	rrr(t_list **head_A, t_list **head_B)
-{
-	reverse_rotate(head_A);
-	reverse_rotate(head_B);
-}
-
-int	ftcheck_atoi(const char *str)
+int	ft_check_atoi(const char *str)
 {
 	int	i;
 	int	sign;
@@ -75,9 +52,9 @@ int	ftcheck_atoi(const char *str)
 /* free_stack:
 *	Frees each element in a given stack and sets the stack pointer to NULL.
 */
-void	free_stack(t_list **stack)
+void	free_stack(the_stack **stack)
 {
-	t_list	*tmp;
+	the_stack	*tmp;
 
 	if (!stack || !(*stack))
 		return ;
