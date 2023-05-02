@@ -33,10 +33,17 @@ the_stack	*ft_lstsecondlast(the_stack *lst);
 the_stack	*get_last_stack(the_stack *head);
 the_stack   *get_second_last_stack(the_stack* head);
 void		ft_add_to_last(the_stack **head, the_stack *new);
+
 /* initialization */
 the_stack	*make_stack_A(int argc, char **argv);
 void assign_index(the_stack *stack_a, int stack_size);
-/* basic_functions */
+int get_stack_size(the_stack *head);
+
+/* basic sorts */
+int	sorted_check(the_stack *head_A);
+void	three_sort(the_stack **head_A);
+
+/* basic functions */
 void	swap(the_stack **head_A);
 void	push(the_stack **head_A, the_stack **head_B);
 void	rotate(the_stack **head);

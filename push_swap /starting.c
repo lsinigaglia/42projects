@@ -23,27 +23,36 @@ void assign_index(the_stack *stack_a, int stack_size)
 {
     the_stack *ptr;
     the_stack *highest;
-    int value;
+    long int value;
 
-    while (--stack_size > 0)
+    while (stack_size > 0)
     {
         ptr = stack_a;
-        value = -2147483648;
+        value = -2147483649;
         highest = NULL;
         while (ptr)
         {
-            if (ptr->original_number == -2147483648 && ptr->cardinal_number == 0)
-                ptr->cardinal_number = 1;
             if (ptr->original_number > value && ptr->cardinal_number == 0)
             {
                 value = ptr->original_number;
                 highest = ptr;
-                //ptr = stack_a;
             }
-            //else
             ptr = ptr->next;
         }
-        if (highest != NULL)
-            highest->cardinal_number = stack_size;
+        highest->cardinal_number = stack_size;
+        stack_size--;
     }
+}
+
+int get_stack_size(the_stack *head)
+{
+    int i;
+
+    i = 0;
+    while (head)
+    {
+        head = head->next;
+        i++;
+    }
+    return i;
 }

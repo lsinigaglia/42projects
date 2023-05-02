@@ -1,5 +1,5 @@
 NAME = a.out
-SRC = main.c base_functions.c utils.c lists_functions.c starting.c
+SRC = main.c base_functions.c utils.c lists_functions.c starting.c basic_sorts.c
 OBJ = $(SRC:%.c=%.o)
 
 CC = gcc

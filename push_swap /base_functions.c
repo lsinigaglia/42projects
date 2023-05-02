@@ -112,7 +112,6 @@ void rotate(the_stack **head)
 	original_head = (*head); // Store the original head node temp = 1->2
 	last = get_last_stack(*head); // Find the last node in the list 
 	last->next = original_head; // Point the next pointer of the last node to the current head last->next = 1->2
-    ft_printf("Last: %d", (*head)->original_number);
 	(*head) = (*head)->next; // Update the head pointer to the second node in the original list 
 	original_head->next = NULL; // Set the next pointer of the original head to NULL
 }

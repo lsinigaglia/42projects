@@ -30,13 +30,20 @@
 int main (int argc, char **argv)
 {
 	the_stack *head_A;
-	//the_stack *head_B;
-	//int i = 0;
+	int stack_size;
+	the_stack *head_B;
 
 	head_A = make_stack_A(argc, argv);
-	assign_index(head_A, 5);
+	stack_size = get_stack_size(head_A);
+	assign_index(head_A, stack_size);
+	three_sort(&head_A);
+	head_B = NULL;
+
 	print_list_contents(head_A);
+	print_list_contents(head_B);
 	free_stack(&head_A);
+	//free_stack(&head_B);
+
 }
 /* 	head_B = ft_lstnew(NULL);
 	while (i++ < 4)
