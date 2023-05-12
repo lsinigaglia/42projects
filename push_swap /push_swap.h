@@ -46,6 +46,9 @@ void	do_push_swap(the_stack **head_A, the_stack **head_B, int stack_size);
 void    big_push(the_stack **head_A, the_stack **head_B, int stack_size);
 void	lets_push_swap (the_stack **head_A, the_stack **head_B, int stack_size);
 
+/* positions*/
+void get_pos(the_stack **head_A);
+
 /* basic functions */
 void	swap(the_stack **head_A);
 void	push(the_stack **head_A, the_stack **head_B);
