@@ -34,12 +34,13 @@ int main (int argc, char **argv)
 	the_stack *head_B;
 
 	head_A = make_stack_A(argc, argv);
+	head_B = NULL;
 	stack_size = get_stack_size(head_A);
 	assign_index(head_A, stack_size);
-	three_sort(&head_A);
-	head_B = NULL;
+	do_push_swap(&head_A, &head_B, stack_size);
 
 	print_list_contents(head_A);
+	ft_printf("listb\n");
 	print_list_contents(head_B);
 	free_stack(&head_A);
 	//free_stack(&head_B);

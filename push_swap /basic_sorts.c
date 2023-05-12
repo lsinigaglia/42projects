@@ -24,3 +24,13 @@ void    three_sort(the_stack **head_A)
         return;
     do_sa(head_A);
 }
+
+void do_push_swap(the_stack **head_A, the_stack **head_B, int stack_size)
+{
+    if (stack_size == 2 && !sorted_check(*head_A))
+        do_sa(head_A);
+    else if (stack_size == 3)
+        three_sort(head_A);
+    else if (stack_size > 3 && !sorted_check(*head_A))
+        lets_push_swap(head_A, head_B, stack_size);
+}

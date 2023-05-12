@@ -39,9 +39,12 @@ the_stack	*make_stack_A(int argc, char **argv);
 void assign_index(the_stack *stack_a, int stack_size);
 int get_stack_size(the_stack *head);
 
-/* basic sorts */
+/* sorts */
 int	sorted_check(the_stack *head_A);
 void	three_sort(the_stack **head_A);
+void	do_push_swap(the_stack **head_A, the_stack **head_B, int stack_size);
+void    big_push(the_stack **head_A, the_stack **head_B, int stack_size);
+void	lets_push_swap (the_stack **head_A, the_stack **head_B, int stack_size);
 
 /* basic functions */
 void	swap(the_stack **head_A);
