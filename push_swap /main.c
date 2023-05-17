@@ -12,21 +12,6 @@
 
 #include "push_swap.h"
 
-/* void	replace_number(t_list *head)
-{
-
-} */
-/* void print_list_contents(the_stack *head)
-{
-	the_stack *current = head;
-	while (current != NULL)
-	{
-		printf("Node content: %d\n", *(int *)(current->content));
-		current = current->next;
-	} */
-//}
-
-
 int main (int argc, char **argv)
 {
 	the_stack *head_A;
@@ -37,38 +22,29 @@ int main (int argc, char **argv)
 	head_B = NULL;
 	stack_size = get_stack_size(head_A);
 	assign_index(head_A, stack_size);
-	do_push_swap(&head_A, &head_B, stack_size);
+	/* do_pb(&head_A, &head_B);
+ 	do_pb(&head_A, &head_B);
+	do_pb(&head_A, &head_B); */
+	/* do_pb(&head_A, &head_B);
+	do_pb(&head_A, &head_B);
+	do_pb(&head_A, &head_B); */ 
+	/* the_move(&head_A, &head_B, 1, -1); */
+	do_push_swap(&head_A, &head_B, stack_size); 
+	/* lets_get_position(&head_A, &head_B); 
+	get_cost(&head_A, &head_B); */ 
 
+
+	/* lets_get_position(&head_A, &head_B);
+	get_cost(&head_A, &head_B); */
+	
+	//print_list_contents(head_A);
+	//print_list_contents(head_A);
+	//ft_printf("list B \n");
 	print_list_contents(head_A);
-	ft_printf("listb\n");
-	print_list_contents(head_B);
+
 	free_stack(&head_A);
+	free_stack(&head_B);
+
 	//free_stack(&head_B);
 
 }
-/* 	head_B = ft_lstnew(NULL);
-	while (i++ < 4)
-		push(&head_A, &head_B); // push b
-	i = 0;
-	while (i++ < 4)
-		push(&head_B, &head_A); // push b
-	// while
-	// swap(&head_A);
-
-
-	// // swap(head_A);
-	// ss(head_A, head_B); // double swap
-	// reverse_rotate(head_A);
-	reverse_rotate(&head_A);
-	while (head_A != NULL)
-	{
-		ft_printf("Stack A:%d\n", *(int *)(head_A->content));
-		head_A = head_A->next;
-	}
-	while (head_B != NULL)
-	{
-		ft_printf("Stack B:%d\n", *(int *)(head_B->content));
-		head_B = head_B->next;
-	}
-	// ft_lstclear(&head_B, free);
-	free_stack(&head_A); */

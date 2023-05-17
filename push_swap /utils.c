@@ -17,6 +17,8 @@
 	while (head != NULL)
 	{
 		printf("Node content: %d\n", (head->cardinal_number));
+	 	/* printf("Node cost_a: %d\n", (head->cost_a));
+		printf("Node cost_b: %d\n", (head->cost_b));  */
 		head = head->next;
 	} 
 }

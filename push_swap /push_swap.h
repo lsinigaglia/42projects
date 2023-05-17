@@ -40,14 +40,21 @@ void assign_index(the_stack *stack_a, int stack_size);
 int get_stack_size(the_stack *head);
 
 /* sorts */
-int	sorted_check(the_stack *head_A);
+int		sorted_check(the_stack *head_A);
 void	three_sort(the_stack **head_A);
 void	do_push_swap(the_stack **head_A, the_stack **head_B, int stack_size);
 void    big_push(the_stack **head_A, the_stack **head_B, int stack_size);
 void	lets_push_swap (the_stack **head_A, the_stack **head_B, int stack_size);
 
 /* positions*/
-void get_pos(the_stack **head_A);
+void	get_pos(the_stack **head_A);
+int		get_target_pos(the_stack **head_A, int b_card);
+int		get_target_min(the_stack **head_A);
+void    lets_get_position(the_stack **head_A, the_stack **head_B);
+
+/* cost */
+void    get_cost(the_stack **head_A, the_stack **head_B);
+
 
 /* basic functions */
 void	swap(the_stack **head_A);
@@ -62,6 +69,7 @@ void	ss(the_stack **head_A, the_stack **head_B);
 int		ft_check_atoi(const char *str);
 void	print_list_contents(the_stack *head);
 void	free_stack(the_stack **stack);
+int		abs(int number);
 
 /* do moves */
 void	do_pb(the_stack **stack_a, the_stack **stack_b);
@@ -71,8 +79,13 @@ void	do_rb(the_stack **head);
 void	do_sa(the_stack **head);
 void	do_sb(the_stack **head);
 void	do_rra(the_stack **head);
+void	do_rrb(the_stack **head);
 void	do_ss(the_stack **headA, the_stack **headB);
 void	do_rr(the_stack **headA, the_stack **headB);
 void	do_rrr(the_stack **headA, the_stack **headB);
+
+/* advanced moves */
+void	do_cheapest_move(the_stack **head_A, the_stack **head_B);
+void	the_move(the_stack **head_A, the_stack **head_B, int a, int b);
 
 #endif

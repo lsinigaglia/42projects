@@ -34,8 +34,34 @@ void    big_push(the_stack **head_A, the_stack **head_B, int stack_size)
     }
 }
 
-void lets_push_swap (the_stack **head_A, the_stack **head_B, int stack_size)
+void final_rotate(the_stack **head_A)
 {
-    big_push(head_A, head_B, stack_size);
-    three_sort(head_A);
+	the_stack	*temp;
+	int			stack_size;
+
+	temp = *head_A;
+	stack_size = get_stack_size(temp);
+	if (sorted_check(*head_A))
+		return;
+	while(temp)
+	{
+		if temp->cardinal_number = 0
+			break;
+		temp = temp->next;
+	}
+	if (temp->position < stack_size / 2)
+		do_ra
+}
+
+void lets_push_swap(the_stack **head_A, the_stack **head_B, int stack_size)
+{
+	big_push(head_A, head_B, stack_size);
+	three_sort(head_A);
+	while (*head_B)
+	{
+		lets_get_position(head_A, head_B);
+		get_cost(head_A, head_B);
+		do_cheapest_move(head_A, head_B);
+	}
+	final_rotate(head_A);
 }
