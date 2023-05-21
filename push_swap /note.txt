@@ -1,4 +1,4 @@
-3)
+3)ALPHAALPHA
 we have to check if the input is correct
 ft_Is_Input_OK
     Is number (signs are ok)

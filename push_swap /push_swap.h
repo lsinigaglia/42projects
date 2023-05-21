@@ -36,8 +36,9 @@ void		ft_add_to_last(the_stack **head, the_stack *new);
 
 /* initialization */
 the_stack	*make_stack_A(int argc, char **argv);
-void assign_index(the_stack *stack_a, int stack_size);
-int get_stack_size(the_stack *head);
+void		assign_index(the_stack *stack_a, int stack_size);
+int			get_stack_size(the_stack *head);
+int			ft_check_atoi(const char *str);
 
 /* sorts */
 int		sorted_check(the_stack *head_A);
@@ -45,6 +46,7 @@ void	three_sort(the_stack **head_A);
 void	do_push_swap(the_stack **head_A, the_stack **head_B, int stack_size);
 void    big_push(the_stack **head_A, the_stack **head_B, int stack_size);
 void	lets_push_swap (the_stack **head_A, the_stack **head_B, int stack_size);
+void	final_rotate(the_stack **head_A);
 
 /* positions*/
 void	get_pos(the_stack **head_A);
@@ -55,6 +57,12 @@ void    lets_get_position(the_stack **head_A, the_stack **head_B);
 /* cost */
 void    get_cost(the_stack **head_A, the_stack **head_B);
 
+/* input check */
+int		are_you_sure_about_the_input(char **argv);
+int 	not_number_found(char *s);
+int 	duplicate_found(char **argv);
+int		wrong_zero_yes(char **argv);
+int		ft_strncmp_pl(char *ptr1, char *ptr2, size_t n);
 
 /* basic functions */
 void	swap(the_stack **head_A);

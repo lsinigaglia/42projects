@@ -36,21 +36,20 @@ void    big_push(the_stack **head_A, the_stack **head_B, int stack_size)
 
 void final_rotate(the_stack **head_A)
 {
-	the_stack	*temp;
+	//the_stack	*temp;
 	int			stack_size;
 
-	temp = *head_A;
-	stack_size = get_stack_size(temp);
+	//temp = *head_A;
+	stack_size = get_stack_size(*head_A);
 	if (sorted_check(*head_A))
 		return;
-	while(temp)
+	while((*head_A)->cardinal_number > 1)
 	{
-		if temp->cardinal_number = 0
-			break;
-		temp = temp->next;
+		if ((*head_A)->cardinal_number < stack_size / 2)
+			do_rra(head_A);
+		else
+			do_ra(head_A);
 	}
-	if (temp->position < stack_size / 2)
-		do_ra
 }
 
 void lets_push_swap(the_stack **head_A, the_stack **head_B, int stack_size)
