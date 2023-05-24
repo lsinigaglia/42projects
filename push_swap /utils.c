@@ -12,15 +12,13 @@
 
 #include "push_swap.h"
 
- void print_list_contents(the_stack *head)
+void	print_list_contents(t_stack *head)
 {
 	while (head != NULL)
 	{
 		printf("Node content: %d\n", (head->cardinal_number));
-	 	/* printf("Node cost_a: %d\n", (head->cost_a));
-		printf("Node cost_b: %d\n", (head->cost_b));  */
 		head = head->next;
-	} 
+	}
 }
 
 int	ft_check_atoi(const char *str)
@@ -54,9 +52,10 @@ int	ft_check_atoi(const char *str)
 /* free_stack:
 *	Frees each element in a given stack and sets the stack pointer to NULL.
 */
-void	free_stack(the_stack **stack)
+
+void	free_stack(t_stack **stack)
 {
-	the_stack	*tmp;
+	t_stack	*tmp;
 
 	if (!stack || !(*stack))
 		return ;

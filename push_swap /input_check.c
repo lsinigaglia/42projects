@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   base_functions.c                                   :+:      :+:    :+:   */
+/*   input_check.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lsinigag <lsinigag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 15:02:07 by lsinigag          #+#    #+#             */
-/*   Updated: 2023/04/24 23:50:09 by lsinigag         ###   ########.fr       */
+/*   Updated: 2023/05/24 17:47:58 by lsinigag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,12 @@ int	ft_strncmp_pl(char *ptr1, char *ptr2, size_t n)
 	unsigned int	i;
 	unsigned int	j;
 
-
 	j = 0;
 	i = 0;
 	if (ptr1[i] == '+')
 		i++;
 	if (ptr2[j] == '+')
 		j++;
-
 	while ((ptr1[i] != '\0' || ptr2[j] != '\0') && i < n)
 	{
 		if (ptr1[i] > ptr2[j])
@@ -36,11 +34,12 @@ int	ft_strncmp_pl(char *ptr1, char *ptr2, size_t n)
 			return (-1);
 		}
 		i++;
+		j++;
 	}
 	return (0);
 }
 
-int not_number_found(char *s)
+int	not_number_found(char *s)
 {
 	int	i;
 	int	sign;
@@ -62,21 +61,23 @@ int not_number_found(char *s)
 	return (0);
 }
 
-int duplicate_found(char **argv)
+int	duplicate_found(char **argv)
 {
 	int	i;
 	int	j;
 
-	i = -1;
+	i = 1;
 	j = 0;
-	while (argv[++i])
+	while (argv[i])
 	{
-		j = i;
-		while (argv[++j])
+		j = i + 1;
+		while (argv[j])
 		{
-			if (ft_strncmp_pl(argv[i], argv[j], (ft_strlen(argv[i]) + 1)) == 0)
+			if (ft_strncmp_pl(argv[i], argv[j], ft_strlen(argv[i]) + 1) == 0)
 				return (1);
+			j++;
 		}
+		i++;
 	}
 	return (0);
 }
@@ -92,14 +93,13 @@ int	wrong_zero_yes(char **argv)
 			return (1);
 	}
 	return (0);
-
 }
+
 int	are_you_sure_about_the_input(char **argv)
 {
-    int i;
+	int	i;
 
 	i = 1;
-	
 	while (argv[i])
 	{
 		if (not_number_found(argv[i]))
@@ -109,7 +109,6 @@ int	are_you_sure_about_the_input(char **argv)
 	if (duplicate_found(argv))
 		return (0);
 	if (wrong_zero_yes(argv))
-	 	return (0);
-
-    return (1);
+		return (0);
+	return (1);
 }

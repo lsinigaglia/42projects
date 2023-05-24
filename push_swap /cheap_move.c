@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PROVEmain.c                                        :+:      :+:    :+:   */
+/*   cheap_move.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lsinigag <lsinigag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 15:44:15 by lsinigag          #+#    #+#             */
-/*   Updated: 2023/04/25 00:40:51 by lsinigag         ###   ########.fr       */
+/*   Updated: 2023/05/24 16:18:02 by lsinigag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,74 +19,78 @@ int	abs(int number)
 	return (number);
 }
 
-void	get_cost(the_stack **head_A, the_stack **head_B)
+void	get_cost(t_stack **head_a, t_stack **head_b)
 {
-	the_stack   *temp_B;
-	int         size_stack_B;
-	int			size_stack_A;
+	t_stack	*temp_b;
+	int		size_stack_b;
+	int		size_stack_a;
 
-	temp_B = *head_B;
-	size_stack_A = get_stack_size(*head_A);
-	size_stack_B = get_stack_size(*head_B);
-	while (temp_B)
+	temp_b = *head_b;
+	size_stack_a = get_stack_size(*head_a);
+	size_stack_b = get_stack_size(*head_b);
+	while (temp_b)
 	{
-		temp_B->cost_b = temp_B->position;
-		temp_B->cost_a = temp_B->target_pos;
-		if (temp_B->cost_b > (size_stack_B / 2))
-			temp_B->cost_b = -(size_stack_B - temp_B->position);
-		if (temp_B->cost_a > (size_stack_A / 2))
-			temp_B->cost_a = -(size_stack_A - temp_B->target_pos);
-		temp_B = temp_B->next;
-    }
+		temp_b->cost_b = temp_b->position;
+		temp_b->cost_a = temp_b->target_pos;
+		if (temp_b->cost_b > (size_stack_b / 2))
+			temp_b->cost_b = -(size_stack_b - temp_b->position);
+		if (temp_b->cost_a > (size_stack_a / 2))
+			temp_b->cost_a = -(size_stack_a - temp_b->target_pos);
+		temp_b = temp_b->next;
+	}
 }
 
-void	the_move(the_stack **head_A, the_stack **head_B, int a, int b)
+void	the_move(t_stack **head_a, t_stack **head_b, int a, int b)
 {
 	while (a < 0 && b < 0)
 	{
-		do_rrr(head_A, head_B);
+		do_rrr(head_a, head_b);
 		a++;
 		b++;
 	}
 	while (a > 0 && b > 0)
 	{
-		do_rr(head_A, head_B);
+		do_rr(head_a, head_b);
 		a--;
 		b--;
 	}
 	while (a > 0)
 	{
-		do_ra(head_A);
+		do_ra(head_a);
 		a--;
 	}
-		
 	while (a < 0)
 	{
-		do_rra(head_A);
+		do_rra(head_a);
 		a++;
 	}
-	while (b > 0)
+	the_move_help(head_b, &b);
+	do_pa(head_a, head_b);
+}
+
+void	the_move_help(t_stack **head_b, int *b)
+{
+	while (*b > 0)
 	{
-		do_rb(head_B);
-		b--;
+		do_rb(head_b);
+		(*b)--;
 	}
 	while (b < 0)
 	{
-		do_rrb(head_B);
-		b++;
+		do_rrb(head_b);
+		(*b)++;
 	}
-	do_pa(head_A, head_B);
 }
 
-void	do_cheapest_move(the_stack **head_A, the_stack **head_B)
+void	do_cheapest_move(t_stack **head_a, t_stack **head_b)
 {
-	the_stack	*temp;
-	int			final_a;
-	int			final_b;
-	int			cheapest;
+	t_stack	*temp;
+	int		final_a;
+	int		final_b;
+	int		cheapest;
 
 	cheapest = 2147483647;
-	temp = (*head_B);
+	temp = (*head_b);
 	while (temp)
 	{
 		if (abs(temp->cost_a) + abs(temp->cost_b) < abs(cheapest))
@@ -97,5 +101,5 @@ void	do_cheapest_move(the_stack **head_A, the_stack **head_B)
 		}
 		temp = temp->next;
 	}
-	the_move(head_A, head_B, final_a, final_b);
+	the_move(head_a, head_b, final_a, final_b);
 }
