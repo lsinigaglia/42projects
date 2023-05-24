@@ -6,7 +6,7 @@
 /*   By: lsinigag <lsinigag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 15:44:15 by lsinigag          #+#    #+#             */
-/*   Updated: 2023/05/24 16:18:02 by lsinigag         ###   ########.fr       */
+/*   Updated: 2023/05/24 19:56:14 by lsinigag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ void	the_move_help(t_stack **head_b, int *b)
 		do_rb(head_b);
 		(*b)--;
 	}
-	while (b < 0)
+	while (*b < 0)
 	{
 		do_rrb(head_b);
 		(*b)++;

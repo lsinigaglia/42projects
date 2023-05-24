@@ -6,7 +6,7 @@
 /*   By: lsinigag <lsinigag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 16:26:31 by lsinigag          #+#    #+#             */
-/*   Updated: 2023/01/31 01:25:33 by lsinigag         ###   ########.fr       */
+/*   Updated: 2023/05/24 20:35:57 by lsinigag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char				*ft_strrchr(const char *str, int c);
 char				*ft_strnstr(const char *str, const char *to_find, \
 					size_t len);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
-int					ft_atoi(const char *str);
+long long			ft_atoi(const char *str);
 int					ft_isalpha(int c);
 int					ft_isdigit(int c);
 int					ft_isalnum(int c);

@@ -6,7 +6,7 @@
 /*   By: lsinigag <lsinigag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 15:02:07 by lsinigag          #+#    #+#             */
-/*   Updated: 2023/05/24 17:47:58 by lsinigag         ###   ########.fr       */
+/*   Updated: 2023/05/24 20:40:26 by lsinigag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,18 @@ int	wrong_zero_yes(char **argv)
 int	are_you_sure_about_the_input(char **argv)
 {
 	int	i;
-
+	long long c;
+	
+	i = 1;
+	while (argv[i])
+	{
+		c = ft_atoi(argv[i]);
+		if (c < -2147483648 || c > 2147483647)
+		{
+			return (0);
+		}
+		i++;
+	}
 	i = 1;
 	while (argv[i])
 	{
