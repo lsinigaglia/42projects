@@ -1,41 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   make_move.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lsinigag <lsinigag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 00:09:48 by lsinigag          #+#    #+#             */
-/*   Updated: 2023/02/10 05:50:21 by lsinigag         ###   ########.fr       */
+/*   Updated: 2023/05/24 16:31:50 by lsinigag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap_bonus.h"
 
-void make_move(t_stack **head_A, t_stack **head_B, char *line)
+void	make_move(t_stack **head_a, t_stack **head_b, char *line)
 {
 	if (ft_strncmp(line, "sa\n", 3) == 0)
-		swap(head_A);
+		swap(head_a);
 	if (ft_strncmp(line, "sb\n", 3) == 0)
-		swap(head_B);
+		swap(head_b);
 	if (ft_strncmp(line, "ss\n", 3) == 0)
-		ss(head_A, head_B);
+		ss(head_a, head_b);
 	if (ft_strncmp(line, "pa\n", 3) == 0)
-		push(head_A, head_B);
+		push(head_a, head_b);
 	if (ft_strncmp(line, "pb\n", 3) == 0)
-		push(head_B, head_A);
+		push(head_b, head_a);
 	if (ft_strncmp(line, "ra\n", 3) == 0)
-		rotate(head_A);
+		rotate(head_a);
 	if (ft_strncmp(line, "rb\n", 3) == 0)
-		rotate(head_B);
+		rotate(head_b);
 	if (ft_strncmp(line, "rr\n", 3) == 0)
-		do_rr(head_A, head_B);
+		do_rr(head_a, head_b);
 	if (ft_strncmp(line, "rra\n", 4) == 0)
-		reverse_rotate(head_A);
+		reverse_rotate(head_a);
 	if (ft_strncmp(line, "rrb\n", 4) == 0)
-		reverse_rotate(head_B);
+		reverse_rotate(head_b);
 	if (ft_strncmp(line, "rrr\n", 4) == 0)
-		do_rrr(head_A, head_B);
+		do_rrr(head_a, head_b);
 }
 
 int	the_check(int argc, char **argv)
@@ -50,18 +50,18 @@ int	the_check(int argc, char **argv)
 		ft_printf("Error\n");
 		return (0);
 	}
-	return(1);
+	return (1);
 }
 
-int sorted_check(t_stack *head_A)
+int	sorted_check(t_stack *head_a)
 {
-    while (head_A->next)
-    {
-        if (head_A->cardinal_number > head_A->next->cardinal_number)
-            return (0);
-        head_A = head_A->next;
-    }
-    return (1);
+	while (head_a->next)
+	{
+		if (head_a->cardinal_number > head_a->next->cardinal_number)
+			return (0);
+		head_a = head_a->next;
+	}
+	return (1);
 }
 
 void	free_stack(t_stack **stack)

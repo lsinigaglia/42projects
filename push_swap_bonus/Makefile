@@ -1,5 +1,6 @@
 NAME = a.out
-SRC = main.c base_functions.c input_check.c starting.c get_next_line/get_next_line.c get_next_line/get_next_line_utils.c make_move.c lists_functions.c
+SRC = main.c base_functions.c input_check.c starting.c get_next_line/get_next_line.c get_next_line/get_next_line_utils.c make_move.c \
+lists_functions.c base_functions1.c base_functions2.c
 OBJ = $(SRC:%.c=%.o)
 
 CC = gcc
