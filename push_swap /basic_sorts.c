@@ -6,7 +6,7 @@
 /*   By: lsinigag <lsinigag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 15:44:15 by lsinigag          #+#    #+#             */
-/*   Updated: 2023/05/24 16:01:08 by lsinigag         ###   ########.fr       */
+/*   Updated: 2023/06/07 19:36:15 by lsinigag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,18 @@ int	sorted_check(t_stack *head_A)
 
 void	three_sort(t_stack **head_A)
 {
+	int	temp1;
+	int	temp2;
+	int	temp3;
+
+	temp1 = (*head_A)->cardinal_number;
+	temp2 = (*head_A)->next->cardinal_number;
+	temp3 = (*head_A)->next->next->cardinal_number;
 	if (sorted_check(*head_A))
 		return ;
-	if ((*head_A)->cardinal_number == 3)
+	if ((temp1 > temp2 && temp1 > temp3))
 		do_ra(head_A);
-	if ((*head_A)->next->cardinal_number == 3)
+	else if (temp2 > temp1 && temp2 > temp3)
 		do_rra(head_A);
 	if (sorted_check(*head_A))
 		return ;
