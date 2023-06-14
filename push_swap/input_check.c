@@ -6,11 +6,11 @@
 /*   By: lsinigag <lsinigag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 15:02:07 by lsinigag          #+#    #+#             */
-/*   Updated: 2023/06/14 16:49:52 by lsinigag         ###   ########.fr       */
+/*   Updated: 2023/06/14 16:41:14 by lsinigag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap_bonus.h"
+#include "push_swap.h"
 
 int	ft_strncmp_pl(char *ptr1, char *ptr2, size_t n)
 {
@@ -89,7 +89,7 @@ int	wrong_zero_yes(char **argv)
 	i = 0;
 	while (argv[++i])
 	{
-		if (argv[i][0] == '0' && argv[i][1])
+		if (argv[i][0] == '0' && argv[i][1] == '0')
 			return (1);
 	}
 	return (0);
@@ -97,8 +97,19 @@ int	wrong_zero_yes(char **argv)
 
 int	are_you_sure_about_the_input(char **argv)
 {
-	int	i;
+	int			i;
+	long long	c;
 
+	i = 1;
+	while (argv[i])
+	{
+		c = ft_atoi(argv[i]);
+		if (c < -2147483648 || c > 2147483647)
+		{
+			return (0);
+		}
+		i++;
+	}
 	i = 1;
 	while (argv[i])
 	{
