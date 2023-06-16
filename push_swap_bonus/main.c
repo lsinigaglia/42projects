@@ -6,7 +6,7 @@
 /*   By: lsinigag <lsinigag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 15:02:07 by lsinigag          #+#    #+#             */
-/*   Updated: 2023/06/17 00:34:02 by lsinigag         ###   ########.fr       */
+/*   Updated: 2023/06/17 00:54:03 by lsinigag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	main(int argc, char **argv)
 	line = get_next_line(0);
 	while (line)
 	{
-		write (1, "1\n", 2);
+		//va in segfault dentro makemove
 		make_move(&head_a, &head_b, line);
 		free(line);
 		line = get_next_line(0);

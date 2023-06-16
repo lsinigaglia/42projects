@@ -6,7 +6,7 @@
 /*   By: lsinigag <lsinigag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 00:09:48 by lsinigag          #+#    #+#             */
-/*   Updated: 2023/06/16 23:22:44 by lsinigag         ###   ########.fr       */
+/*   Updated: 2023/06/17 00:54:24 by lsinigag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ void	make_move(t_stack **head_a, t_stack **head_b, char *line)
 		push(head_b, head_a);
 	if (ft_strncmp(line, "pb\n", 3) == 0)
 		push(head_a, head_b);
+	//va in segfault dopo pushb. il problema sará push_b
+	printf("LINE:%s", line);
 	if (ft_strncmp(line, "ra\n", 3) == 0)
 		rotate(head_a);
 	if (ft_strncmp(line, "rb\n", 3) == 0)
