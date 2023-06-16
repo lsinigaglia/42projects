@@ -6,7 +6,7 @@
 /*   By: lsinigag <lsinigag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 15:02:07 by lsinigag          #+#    #+#             */
-/*   Updated: 2023/05/24 15:57:50 by lsinigag         ###   ########.fr       */
+/*   Updated: 2023/06/16 22:38:10 by lsinigag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,9 @@ t_stack	*make_stack_a(int argc, char **argv)
 	tmp = ft_lstmake(ft_check_atoi(argv[1]));
 	anchor = tmp;
 	i = 2;
-	while (i < argc)
+	while (argv[i])
 	{
+		argc = 1;
 		tmp = ft_lstmake(ft_check_atoi(argv[i]));
 		ft_add_to_last(&anchor, tmp);
 		i++;

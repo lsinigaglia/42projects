@@ -6,7 +6,7 @@
 /*   By: lsinigag <lsinigag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 15:02:11 by lsinigag          #+#    #+#             */
-/*   Updated: 2023/05/24 17:36:04 by lsinigag         ###   ########.fr       */
+/*   Updated: 2023/06/16 23:30:11 by lsinigag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,8 +76,9 @@ void	ss(t_stack **head_a, t_stack **head_b);
 /* utils */
 int		ft_check_atoi(const char *str);
 void	print_list_contents(t_stack *head);
-void	free_stack(t_stack **stack);
+void	free_stack(t_stack **stack, int *flag, char **argv);
 int		abs(int number);
+void	free_argv(char **argv, int flag);
 
 /* do moves */
 void	do_pb(t_stack **stack_a, t_stack **stack_b);

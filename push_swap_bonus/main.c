@@ -6,7 +6,7 @@
 /*   By: lsinigag <lsinigag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 15:02:07 by lsinigag          #+#    #+#             */
-/*   Updated: 2023/05/24 16:28:58 by lsinigag         ###   ########.fr       */
+/*   Updated: 2023/06/17 00:34:02 by lsinigag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,19 @@ int	main(int argc, char **argv)
 	t_stack	*head_a;
 	t_stack	*head_b;
 	char	*line;
+	int		flag;
 
-	if (!(the_check(argc, argv)))
+	flag = 0;
+	if (!(the_check(argc, &argv, &flag)))
 		return (0);
-	head_a = make_stack_a(argc, argv);
+	head_a = make_stack_a(argv);
 	head_b = NULL;
 	stack_size = get_stack_size(head_a);
 	assign_index(head_a, stack_size);
 	line = get_next_line(0);
 	while (line)
 	{
+		write (1, "1\n", 2);
 		make_move(&head_a, &head_b, line);
 		free(line);
 		line = get_next_line(0);
@@ -36,6 +39,5 @@ int	main(int argc, char **argv)
 		ft_printf("KO");
 	else if (sorted_check(head_a))
 		ft_printf("OK");
-	free(head_a);
-	free(head_b);
+	free_stack(&head_a, &flag, argv);
 }

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils_and_ss.c                                     :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lsinigag <lsinigag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 14:29:48 by lsinigag          #+#    #+#             */
-/*   Updated: 2023/04/24 23:47:00 by lsinigag         ###   ########.fr       */
+/*   Updated: 2023/06/16 23:30:00 by lsinigag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,10 +53,19 @@ int	ft_check_atoi(const char *str)
 *	Frees each element in a given stack and sets the stack pointer to NULL.
 */
 
-void	free_stack(t_stack **stack)
+void	free_stack(t_stack **stack, int *flag, char **argv)
 {
 	t_stack	*tmp;
+	int		i;
 
+	i = -1;
+	if (*flag == 1)
+	{
+		while (argv[++i])
+			free(argv[i]);
+		free(argv);
+		*flag = 0;
+	}
 	if (!stack || !(*stack))
 		return ;
 	while (*stack)
@@ -66,4 +75,17 @@ void	free_stack(t_stack **stack)
 		*stack = tmp;
 	}
 	*stack = NULL;
+}
+
+void	free_argv(char **argv, int flag)
+{
+	int	i;
+
+	i = -1;
+	if (flag == 1)
+	{
+		while (argv[++i])
+			free(argv[i]);
+		free(argv);
+	}
 }

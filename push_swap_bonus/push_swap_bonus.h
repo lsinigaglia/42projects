@@ -6,7 +6,7 @@
 /*   By: lsinigag <lsinigag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 19:37:31 by lsinigag          #+#    #+#             */
-/*   Updated: 2023/05/24 16:31:17 by lsinigag         ###   ########.fr       */
+/*   Updated: 2023/06/17 00:18:46 by lsinigag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ t_stack	*get_second_last_stack(t_stack *head);
 void	ft_add_to_last(t_stack **head, t_stack *new);
 
 /* initialization */
-t_stack	*make_stack_a(int argc, char **argv);
+t_stack	*make_stack_a(char **argv);
 void	assign_index(t_stack *stack_a, int stack_size);
 int		get_stack_size(t_stack *head);
 
@@ -60,9 +60,9 @@ void	ss(t_stack **head_a, t_stack **head_b);
 /* make_move.c */
 
 void	make_move(t_stack **head_a, t_stack **head_b, char *line);
-int		the_check(int argc, char **argv);
+int		the_check(int argc, char ***argv, int *flag);
 int		sorted_check(t_stack *head_a);
-void	free_stack(t_stack **stack);
+void	free_stack(t_stack **stack, int *flag, char **argv);
 
 void	ft_add_to_last(t_stack **head, t_stack *new);
 t_stack	*ft_lstmake(int number);

@@ -1,4 +1,4 @@
-NAME = a.out
+NAME = push_swap
 SRC = main.c base_functions.c utils.c lists_functions.c starting.c basic_sorts.c lets_push_swap.c get_positions.c \
 cheap_move.c input_check.c base_functions_1.c base_functions_2.c
 OBJ = $(SRC:%.c=%.o)

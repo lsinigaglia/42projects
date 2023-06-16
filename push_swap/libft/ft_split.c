@@ -6,7 +6,7 @@
 /*   By: lsinigag <lsinigag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 20:14:10 by lsinigag          #+#    #+#             */
-/*   Updated: 2023/01/21 21:00:30 by lsinigag         ###   ########.fr       */
+/*   Updated: 2023/06/16 23:50:44 by lsinigag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,10 @@ char	**ft_split(const char *s, char c)
 	if (!s)
 		return (0);
 	i = 0;
-	number_of_words = malloc(sizeof(char *) * (get_word(s, c) + 1));
+	number_of_words = malloc(sizeof(char *) * (get_word(s, c) + 2));
 	if (!number_of_words)
 		return (0);
+	number_of_words[i++] = ft_strdup("push_swap");
 	while (*s)
 	{
 		if (*s != c)
